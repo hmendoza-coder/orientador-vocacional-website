@@ -65,6 +65,9 @@
 	}
 	?></select><?php
 		//Comentario de prueba
+		if(isset($_POST($variable))){
+			
+		}
 	?>
 </body>
 </html>
