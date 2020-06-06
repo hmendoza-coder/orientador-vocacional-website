@@ -1,0 +1,38 @@
+/*AQUI INTENTO COLOCAR EL LOGO EN LA ORILLA JUNTO AL titulo, PERO NO ME SALEEEEEE*/
+h1{
+	font-family: 'Righteous', ;
+	font-size: 80px;
+	font-weight: bold;
+	color: rgb(0, 38, 255);
+	text-align: left;
+	border: 2px;
+    padding: 3px;
+    margin: auto 20px;
+	/*background-image: url("imagenes/logo3.PNG");*/
+
+}
+
+h2 {
+	font-family: 'Bree Serif', ;
+	font-size: 50px;
+	font-weight: bold;
+	text-align: center;
+    margin: auto 20px;
+    border: 2px solid rgb(61, 152, 194);
+	color: rgb(7, 7, 7);
+}
+body{
+	font-family: 'Bree Serif', ;
+	font-size: 20px;
+	font-weight: bold;
+    text-align: left;
+	color: rgb(8, 8, 8);
+	background-image: url("imagenes/blu.jpg");
+	background-size: 1400px 1080px;
+}
+
+.instruccion{
+    border: 2px;
+    padding: 3px;
+    margin: 50px;
+}
