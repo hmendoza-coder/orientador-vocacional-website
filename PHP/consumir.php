@@ -63,7 +63,8 @@
 			?><option value="<?php echo $value['idEstado']?>"><?php echo $value['nombre']?></option><?php
 		}
 	}
-	?></select>
-	
+	?></select><?php
+		//Comentario de prueba
+	?>
 </body>
 </html>
