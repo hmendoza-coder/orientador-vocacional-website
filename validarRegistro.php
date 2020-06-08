@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="es"> 
 <head>
-<meta http-equiv="Content-Type" content="text/html;" charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="Estilos/3wschools.css" type="text/css">
-<link rel="stylesheet" href="Estilos/estilo.css" type="text/css">
-<title>Validación del formulario</title>
-</head>
+        <meta charset="UTF-8">
+        <!--<meta name= "viewport" content="width=device-width, initial-scale-1.0">       esta cosa da error en consola-->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Orientador vocacional</title>
+        <!--Scripts-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <!--Estilos-->
+        <link rel="stylesheet" href="estiloLogin.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+	    <!--Titulos-->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
+        <link href='http://fonts.googleapis.com/css?family=Neucha' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+    </head>
 <body>
 <?php
-
     // Todas las variables que se reciben del formulario.
-    $user = $_POST["nombre"];
-    $apeP = $_POST["apellidoP"];
-    $apeP = $_POST["apellidoM"];
-    $correo = $_POST['correo'];
-    $pass = $_POST['pass'];
-    $sexo = $_POST['sexo'];
-    $fecha = $_POST['fecha'];    
-    $colonia = $_POST['colonia'];
+    $nombre = limpiarVariable($_POST["nombre"]);
+    $apeP = limpiarVariable($_POST["apellidoP"]);
+    $apeM = limpiarVariable($_POST["apellidoM"]);
+    $sexo = limpiarVariable($_POST['sexo']);
+    $correo = limpiarVariable($_POST['correo']);
+    $pass = limpiarVariable($_POST['pass']);
+    $fecha = date('Y-m-d', strtotime($_POST['fecha']));
     $estado = $_POST['estado'];
-    $municipio = $_POST['municipio'];
+    //$municipio = $_POST['municipio'];
+    //$colonia = $_POST['colonia'];
 
+    echo "Nombre:",$nombre," Apellido P",$apeP," Apellido M",$apeM," sexo",$sexo," Correo",$correo," Pass:",$pass," Fecha nacimiento",$fecha," Estado:",$estado;
+
+    
     // Funcion que "limpia" las variables.
     function limpiarVariable($varSucia){
         $varLimpia;
@@ -50,81 +61,7 @@
         }
         return $varLimpia;
     }
-
-    function conexionDB(){
-        $servername = "localhost";
-        $username = "root";
-        $password = "xenia";
-        $dbname = "mrwillys";
-        $con = new mysqli(SERVERNAME, USERNAME, PASSWORD, DATABASE);
-
-        return $con;
-    }
-    function Redireccionar($boolean){
-        if($boolean){
-            header('Location: index.php');
-        }
-        else{
-            header('Location: index2.html');
-        }
-    }
-    
-    function validarExistencia($user, $pass, $nombre, $tel, $correo){
-        $con = conexionDB();
-        if ($con->connect_error) {
-            die("Conexion Fallida: " . $con->connect_error);
-        }
-        $user = limpiarVariable($user);
-        $pass = limpiarVariable($pass);
-        $nombre = limpiarVariable($nombre);
-        $tel = limpiarVariable($tel);
-        $correo = limpiarVariable($correo);
-        $sql="SELECT * FROM usuarios where nombreUsuario='".$user."' and clave='".$pass."' and correo = '".$correo."' and telefono='".$tel."';";
-        if(!$result = $con->query($sql)){
-            echo "Error de conexion";
-        }
-        else{
-            $usuario = $result->fetch_assoc();
-            if(!$user = $usuario['nombreUsuario']){
-                if($correo != $usuario['correo']){
-                    $query = "INSERT INTO usuarios (nombreUsuario, nombreCompleto, telefono, correo, clave) values ('".$user."','".$nombre."','".$tel."','".$correo."','".$pass."');";
-                    echo "Consulta: $query";
-                    if ($con->query($query) === TRUE) {
-                        
-                        return true;
-                    } else {
-                        echo "Error: " . $query . "<br>" . $con->error;
-                        return false;
-                    }    
-                }
-                else{
-                    
-                    return false;
-                }
-                  
-            }
-            else{
-                return false;
-            }
-            
-        }
-        $con->close();
-    }
-    if(validarExistencia($user, $pass, $nombre, $tel, $correo)){
-        $mensaje = "Usuario agregado con exito";
-        echo "<script>";
-        echo "alert('$mensaje');";  
-        echo "window.location = 'sesion.php';";
-        echo "</script>";  
-    }
-    else{
-        $mensaje = "El usuario ya existe";
-        echo "<script>";
-        echo "alert('$mensaje');";  
-        echo "window.location = 'index.php';";
-        echo "</script>";  
-    }
-        
+       
    
 ?>
 <script src="Javascript/sweetAlert.js"></script>

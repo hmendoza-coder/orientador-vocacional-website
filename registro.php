@@ -9,11 +9,11 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <meta name= "viewport" content="width=device-width, initial-scale-1.0">
+        <!--<meta name= "viewport" content="width=device-width, initial-scale-1.0">       esta cosa da error en consola-->
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Orientador vocacional</title>
         <!--Scripts-->
-        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <!--Estilos-->
         <link rel="stylesheet" href="estiloLogin.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
@@ -34,6 +34,7 @@
             <div class="content-form">
                 <div class="contact-form">
                     <h3>Registrate</h3>
+<<<<<<< HEAD:registro.php
                     <form action="validarRegistro.php" method="POST">
                         <p>
                             <label for="nombre">Nombre: </label>                    
@@ -46,11 +47,22 @@
                         <p>
                             <label for="apellido">Apellido materno: </label>
                             <input type="text" placeholder="Apellido Materno" name="apellido" id="apellido" autocomplete="off" required>
+=======
+                    <form action="validarRegistro.php" method="POST" id="formulario">
+                        <p>                    
+                            <input type="text" placeholder="Nombre(s)" name="nombre" id="nombre" autocomplete="off" required>
+                        </p>
+                        <p>
+                            <input type="text" placeholder="Apellido paterno" name="apellidoP" id="apellidoP" autocomplete="off" required>
+                        </p>
+                        <p>
+                            <input type="text" placeholder="Apellido materno" name="apellidoM" id="apellidoM" autocomplete="off" required>
+>>>>>>> 47001940bab52d0cf118fd17e848e5d11f76ee3a:login.php
                         </p>
                         <p>
                             <label for="sexo">Sexo: </label>
                             <select name="sexo" id="sexo"  placeholder="Sexo">
-                                <option value="0">Sexo
+                                <option value="" selected disabled hidden>Sexo</option>
                                 <option value="masculino">Masculino</option> 
                                 <option value="femenino">Femenino</option> 
                             </select>
@@ -63,6 +75,7 @@
                             <label for="pass">Contraseña (maximo 8 digitos):</label>                            
                             <input type="password" placeholder="Contraseña" name="pass" id="pass" required>
                         </p>
+<<<<<<< HEAD:registro.php
                         <p> 
                             <label for="fecha">fecha de nacimiento: </label>                           
                             <input type="date" name="fecha" id="fecha" placeholder="fecha de nacimiento" autocomplete="off" required>
@@ -84,9 +97,32 @@
                                 <option value="0">Colonia
                                 <option value="masculino">Masculino</option> 
                                 <option value="femenino">Femenino</option> 
+=======
+                        <p>                            
+                            <input type="date" name="fecha" id="fecha" autocomplete="off" required>
+                        </p>
+                        <p>
+                            <select name="estado" id="selectEstado"  type="combo" placeholder="Estado" onchange="getIDEstado()" required>
+		                    <option value="" selected disabled hidden>Estado </option>
+                            <?php include 'C:\xampp\htdocs\orientador-vocacional-website\PHP\consumir.php';
+                            iniciar("Estado"); ?>
                             </select>
                         </p>
-                        <p class="bloque">
+                        <p>
+                            <select name="municipio" id="selectMunicipio"  type="combo" placeholder="Municipio">
+                            <option value="" selected disabled hidden>Municipio </option>
+
+>>>>>>> 47001940bab52d0cf118fd17e848e5d11f76ee3a:login.php
+                            </select>
+                        </p>
+                        <p>
+                            <select name="colonia" id="selectColonia"  type="combo" placeholder="Colonia" >
+                            <option value="" selected disabled hidden>Colonia </option>
+                            
+                            </select>
+                            <!-- -->
+                        </p>
+                        <p class="bloque" onclick = "return validarFormulario();">
                             <button type="submit">
                                 Aceptar
                             </button>
@@ -117,7 +153,8 @@
                     </p>
                 </div>
             </div>
-
+    <script src="Javascript/selectMunicipio.js"></script>
+    <script src="Javascript/validarRegistro.js"></script>
     </body>
 </html>
 

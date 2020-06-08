@@ -4,11 +4,13 @@
 ?>
 <!DOCTYPE html>
 <html lang="es"> 
-	<head>
+<head>
         <meta charset="UTF-8">
         <meta name= "viewport" content="width=device-width, initial-scale-1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Orientador vocacional</title>
+        <!--Scripts-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
         <!--Estilos-->
         <link rel="stylesheet" href="estiloLogin.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
@@ -19,8 +21,9 @@
     </head>
 	<body>
 	<?php
+
 	//Codificacion
-	function Consumir($url){
+	function Consumir($url,$llave){
 
 		//Parte que hay que agregar para que funcione el file_get_contents
 		$arrContextOptions=array(
@@ -35,13 +38,14 @@
 		$datos = json_decode($json, true);
 		$contador = 0;
 		foreach($datos as $valor){
+			// Agarrar solo los datos.
 			if($contador == 2){
 				$array = $valor;
 			}
 			$contador++;
 		}
 		//Aqui va el return final teoricamente aqui se deberia mandar a llamar una funcion que genere combobox.
-		selectAPI($array);
+		selectAPI($array, $llave);
 	}
 
 	function API($ruta){
@@ -52,22 +56,33 @@
 		return $direccion;
 	}
 
-	$direccionAPi = API("Estado");
-	Consumir($direccionAPi);
-
-	function selectAPI($datos){
-		?>     
-		<select name="estado" id="estado"  placeholder="Estado">
-		<?php
-		foreach ($datos as $value) {
-			?><option value="<?php echo $value['idEstado']?>"><?php echo $value['nombre']?></option><?php
+	function iniciar($ruta){
+		if($ruta = "Estado"){
+			$direccionAPi = API("Estado");
+			Consumir($direccionAPi,"Estado");	
+		}else{
+			$direccionAPi = API("Municipio");
+			Consumir($direccionAPi,"Municipio");	
 		}
 	}
-	?></select><?php
-		//Comentario de prueba
-		if(isset($_POST($variable))){
-			
+
+	function selectAPI($datos, $llave){
+		if($llave = "Estado"){
+			$variable = "idEstado";
 		}
-	?>
+		else{
+			$variable = "idMunicipio";
+		}
+			
+		?>     
+	<!--	<select name="estado" id="selectEstado"  type="combo" placeholder="Estado" onchange="getIDEstado()"> -->
+	<!--	<option value="" selected disabled hidden>Estado de residencia</option> -->
+		<?php
+		foreach ($datos as $value) {
+			?><option value="<?php echo $value[$variable]?>"><?php echo $value['nombre']?></option><?php
+		}
+	}
+	?> 
+	<script src="Javascript/selectMunicipio.js"></script>
 </body>
 </html>

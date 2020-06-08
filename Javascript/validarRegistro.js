@@ -1,38 +1,165 @@
 function validarFormulario(){
+
+		//Variables del form.
 		var txtNombre = document.getElementById('nombre').value;
-		var txtUsuario = document.getElementById('user').value;
-		var txtPass = document.getElementById('pass').value;
-		var txtTel = document.getElementById('tel').value;
+		var txtApeP = document.getElementById('apellidoP').value;
+		var txtApeM = document.getElementById('apellidoM').value;
+		var txtSexo = document.getElementById('sexo').value;
 		var txtCorreo = document.getElementById('correo').value;
-  
-		//Test campo obligatorio
+		var txtPass = document.getElementById('pass').value;
+		var txtFechaNacimiento = document.getElementById('fecha').value;
+		var txtEstado;
+	
+		if(document.getElementById('selectEstado') != ""){
+			txtEstado = document.getElementById('estado');
+			console.log(txtEstado);
+		}else{
+			console.log("No hay valores de estado")
+			return false;
+		}
+		//Validacion de nombre
 		if(txtNombre == null || txtNombre.length == 0 || /^\s+$/.test(txtNombre)){
-			alert('ERROR: El campo nombre no debe ir vacío o lleno de solamente espacios en blanco');
+			Swal.fire(
+				'Nombre es campo obligatorio.',
+				'Este campo es obligatorio NO debe ir vacio o solo con espacios,',
+				'question'
+			)
 			return false;
 		}
-		
-		if(txtUsuario == null || txtUsuario.length == 0 || /^\s+$/.test(txtUsuario)){
-			alert('ERROR: El campo nombre no debe ir vacío o lleno de solamente espacios en blanco');
+		if(isNaN(txtNombre) == false){
+			Swal.fire(
+				'Incorrecto, valores no validos.',
+				'Nombre NO debe contar con caracteres no validos, como números o signos',
+				'error'
+			)
 			return false;
 		}
- 
-		//Test edad
-		if(txtTel == null || txtTel.length == 0 || isNaN(txtTel)){
-			alert('ERROR: Debe ingresar una edad');
+		//Validacion de Apellidos
+		if(txtApeP == null || txtApeP.length == 0 || /^\s+$/.test(txtApeP)){
+			Swal.fire(
+				'Apellido paterno es campo obligatorio.',
+				'Este campo es obligatorio NO debe ir vacio o solo con espacios,',
+				'question'
+			)
 			return false;
 		}
- 
-		//Test correo
-		if(!(/\S+@\S+\.\S+/.test(txtCorreo))){
-			alert('ERROR: Debe escribir un correo válido');
+		if(isNaN(txtApeP) == false){
+			Swal.fire(
+				'Incorrecto, valores no validos.',
+				'Apellido paterno NO debe contar con caracteres no validos, como números o signos',
+				'error'
+			)
 			return false;
 		}
- 
+		if(txtApeM == null || txtApeM.length == 0 || /^\s+$/.test(txtApeM)){
+			Swal.fire(
+				'Apellido Materno es campo obligatorio.',
+				'Este campo es obligatorio NO debe ir vacio o solo con espacios,',
+				'question'
+			)
+			return false;
+		}
+		if(isNaN(txtApeM) == false){
+			Swal.fire(
+				'Incorrecto, valores no validos.',
+				'Apellido materno NO debe contar con caracteres no validos, como números o signos',
+				'error'
+			)
+			return false;
+		}
+		if(txtSexo == null || txtSexo.length == 0 || /^\s+$/.test(txtSexo)){
+			Swal.fire(
+				'Elige un sexo.',
+				'Este campo es obligatorio, por favor selecciona un valor.',
+				'question'
+			)
+			return false;
+		}
+		if(txtCorreo == null || txtCorreo.length == 0 || /^\s+$/.test(txtCorreo)){
+			Swal.fire(
+				'Correo es campo obligatorio.',
+				'Este campo es obligatorio NO debe ir vacio o solo con espacios,',
+				'question'
+			)
+			return false;
+		}
+		else{
+			//validarEmail(txtCorreo);
+		}
+
 		if(txtPass == null || txtPass.length == 0 || /^\s+$/.test(txtPass)){
-			alert('ERROR: El campo nombre no debe ir vacío o lleno de solamente espacios en blanco');
+			Swal.fire(
+				'La contraseña es campo obligatorio.',
+				'Este campo es obligatorio NO debe ir vacio o solo con espacios,',
+				'question'
+			)
 			return false;
 		}
-		
- 
+
+		if(txtFechaNacimiento == null || txtFechaNacimiento.length == 0){
+			Swal.fire(
+				'Fecha de nacimiento obligatoria.',
+				'Este campo es obligatorio, por favor selecciona un valor.',
+				'question'
+			)
+			return false;
+		}
+		else{
+			calcularEdad(txtFechaNacimiento);
+		}
+
+ 		//Validacion de correo
+		/*if(!(/\S+@\S+\.\S+/.test(txtCorreo))){
+			if(txtSexo == null || txtSexo.length == 0 || /^\s+$/.test(txtSexo)){
+				Swal.fire(
+					'Correo no válido.',
+					'Este correo no esta permitido, por favor escribe uno valido.',
+					'error'
+				)
+				return false;
+			}
+			return false;
+		}*/
+ 		
 		return true;
+	}
+
+	function campoVacio(campo){
+		Swal.fire({
+			title: campo +' es un campo obligatorio.',
+			text: 'Este campo es obligatorio por lo que no debe ir vacio o solo con espacios.',
+			icon: 'warning',
+			backdrop: true,
+			allowOutsideClick: true,
+			allowEscapeKey: true,
+			allowEnterKey: true,
+		})
+		return false;
+	}
+
+	function validarEmail(valor) {
+		if( !(/^\w+([\.-]?\w+)*@(?:|hotmail|outlook|yahoo|live|gmail)\.(?:|com|es)+$/.test(valor)) ) {
+			Swal.fire(
+				'El correo ingresado no es valido.',
+				'El correo no cuenta con la estructura correcta nombre usuario + @ + servidor + dominio',
+				'question'
+			)
+			return false;
+		}
+	  }
+
+	function calcularEdad(fechaNacimiento){
+		var fechaNacim = new Date(fechaNacimiento);
+		var fechaActual = new Date();
+		var edad = fechaActual.getFullYear() - fechaNacim.getFullYear();
+		console.log("edad");
+		console.log(edad);
+		if(edad < 12 || edad > 100){
+			Swal.fire(
+				'Fecha de nacimiento incorrecta.',
+				'La fecha de nacimiento ingresada es incorrecta verificalo',
+				'question'
+			)
+			return false
+		}
 	}
