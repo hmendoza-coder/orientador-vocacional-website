@@ -13,12 +13,17 @@ session_start();
 </head>
 <body>
 <?php
-    define('SERVERNAME', 'localhost:3306');
-    define('USERNAME', 'root');
-    define('PASSWORD', '');
-    define('DATABASE', 'mrwillys');
-    $user = $_POST["user"];
-    $pass = $_POST["pass"];
+    $user = $_POST["nombre"];
+    $apeP = $_POST["apellidoP"];
+    $apeP = $_POST["apellidoM"];
+    
+    $correo = $_POST['correo'];
+    $pass = $_POST['pass'];
+    $sexo = $_POST['sexo'];
+    $fecha = $_POST['fecha'];    
+    $colonia = $_POST['colonia'];
+    $estado = $_POST['estado'];
+    $municipio = $_POST['municipio'];
 
     function limpiarVariable($varSucia){
         $varLimpia;
