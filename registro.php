@@ -25,7 +25,7 @@
     <body>
          <!--AQUI ESTA EL BOTON DE CIERRE DE SESION QUE DEBE AVISAR A LA API QUE SE HA CERRADO SESION-->
          <button type="submit" class="cierre">
-            <a href="indexV2.html">
+            <a href="login.html">
             SALIR
             </a>
         </button>
@@ -35,35 +35,43 @@
                 <div class="contact-form">
                     <h3>Registrate</h3>
                     <form action="validarRegistro.php" method="POST">
-                        <p>                    
+                        <p>
+                            <label for="nombre">Nombre: </label>                    
                             <input type="text" placeholder="Nombre(s)" name="nombre" id="nombre" autocomplete="off" required>
                         </p>
                         <p>
+                            <label for="apellido">Apellido paterno: </label>
                             <input type="text" placeholder="Apellido Paterno" name="apellido" id="apellido" autocomplete="off" required>
                         </p>
                         <p>
+                            <label for="apellido">Apellido materno: </label>
                             <input type="text" placeholder="Apellido Materno" name="apellido" id="apellido" autocomplete="off" required>
                         </p>
                         <p>
+                            <label for="sexo">Sexo: </label>
                             <select name="sexo" id="sexo"  placeholder="Sexo">
                                 <option value="0">Sexo
                                 <option value="masculino">Masculino</option> 
                                 <option value="femenino">Femenino</option> 
                             </select>
                         </p>
-                        <p>                            
+                        <p> 
+                            <label for="correo">Correo electronico: </label>                           
                             <input type="email" placeholder="Correo electronico" name="correo" id="correo" autocomplete="off" required>
                         </p>
-                        <p>                            
+                        <p>
+                            <label for="pass">Contraseña (maximo 8 digitos):</label>                            
                             <input type="password" placeholder="Contraseña" name="pass" id="pass" required>
                         </p>
-                        <p>                            
-                            <input type="date" name="fecha" id="fecha" placeholder="Correo electronico" autocomplete="off" required>
+                        <p> 
+                            <label for="fecha">fecha de nacimiento: </label>                           
+                            <input type="date" name="fecha" id="fecha" placeholder="fecha de nacimiento" autocomplete="off" required>
                         </p>
                         <p>
                             <?php include 'C:\xampp\htdocs\PaginaWeb\PHP\consumir.php'; ?>
                         s</p>                            
-                        <p>                            
+                        <p>  
+                            <label for="municipio">Municipio: </label>                          
                             <select name="municipio" id="municipio"  placeholder="Municipio">
                                 <option value="0">Municipio
                                 <option value="masculino">Masculino</option> 
@@ -71,6 +79,7 @@
                             </select>
                         </p>
                         <p>
+                            <label for="colonia">Colonia: </label>
                             <select name="colonia" id="colonia"  placeholder="Colonia">
                                 <option value="0">Colonia
                                 <option value="masculino">Masculino</option> 
