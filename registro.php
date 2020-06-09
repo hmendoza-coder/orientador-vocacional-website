@@ -25,7 +25,7 @@
     <body>
          <!--AQUI ESTA EL BOTON DE CIERRE DE SESION QUE DEBE AVISAR A LA API QUE SE HA CERRADO SESION-->
          <button type="submit" class="cierre">
-            <a href="indexV2.html">
+            <a href="login.html">
             SALIR
             </a>
         </button>
@@ -34,7 +34,25 @@
             <div class="content-form">
                 <div class="contact-form">
                     <h3>Registrate</h3>
+<<<<<<< HEAD:login.php
                     <form action="PHP/validarRegistro.php" method="POST" id="formulario">
+=======
+<<<<<<< HEAD:registro.php
+                    <form action="validarRegistro.php" method="POST">
+                        <p>
+                            <label for="nombre">Nombre: </label>                    
+                            <input type="text" placeholder="Nombre(s)" name="nombre" id="nombre" autocomplete="off" required>
+                        </p>
+                        <p>
+                            <label for="apellido">Apellido paterno: </label>
+                            <input type="text" placeholder="Apellido Paterno" name="apellido" id="apellido" autocomplete="off" required>
+                        </p>
+                        <p>
+                            <label for="apellido">Apellido materno: </label>
+                            <input type="text" placeholder="Apellido Materno" name="apellido" id="apellido" autocomplete="off" required>
+=======
+                    <form action="validarRegistro.php" method="POST" id="formulario">
+>>>>>>> 37d6f42a8536291c7bfbdf59658b32f6e0ad3f04:registro.php
                         <p>                    
                             <input type="text" placeholder="Nombre(s)" name="nombre" id="nombre" autocomplete="off" required>
                         </p>
@@ -43,20 +61,47 @@
                         </p>
                         <p>
                             <input type="text" placeholder="Apellido materno" name="apellidoM" id="apellidoM" autocomplete="off" required>
+>>>>>>> 47001940bab52d0cf118fd17e848e5d11f76ee3a:login.php
                         </p>
                         <p>
+                            <label for="sexo">Sexo: </label>
                             <select name="sexo" id="sexo"  placeholder="Sexo">
                                 <option value="" selected disabled hidden>Sexo</option>
                                 <option value="h">Masculino</option> 
                                 <option value="m">Femenino</option> 
                             </select>
                         </p>
-                        <p>                            
+                        <p> 
+                            <label for="correo">Correo electronico: </label>                           
                             <input type="email" placeholder="Correo electronico" name="correo" id="correo" autocomplete="off" required>
                         </p>
-                        <p>                            
+                        <p>
+                            <label for="pass">Contraseña (maximo 8 digitos):</label>                            
                             <input type="password" placeholder="Contraseña" name="pass" id="pass" required>
                         </p>
+<<<<<<< HEAD:registro.php
+                        <p> 
+                            <label for="fecha">fecha de nacimiento: </label>                           
+                            <input type="date" name="fecha" id="fecha" placeholder="fecha de nacimiento" autocomplete="off" required>
+                        </p>
+                        <p>
+                            <?php include 'C:\xampp\htdocs\PaginaWeb\PHP\consumir.php'; ?>
+                        s</p>                            
+                        <p>  
+                            <label for="municipio">Municipio: </label>                          
+                            <select name="municipio" id="municipio"  placeholder="Municipio">
+                                <option value="0">Municipio
+                                <option value="masculino">Masculino</option> 
+                                <option value="femenino">Femenino</option> 
+                            </select>
+                        </p>
+                        <p>
+                            <label for="colonia">Colonia: </label>
+                            <select name="colonia" id="colonia"  placeholder="Colonia">
+                                <option value="0">Colonia
+                                <option value="masculino">Masculino</option> 
+                                <option value="femenino">Femenino</option> 
+=======
                         <p>                            
                             <input type="date" name="fecha" id="fecha" autocomplete="off" required>
                         </p>
@@ -71,6 +116,7 @@
                             <select name="municipio" id="selectMunicipio"  type="combo" placeholder="Municipio">
                             <option value="" selected disabled hidden>Municipio </option>
 
+>>>>>>> 47001940bab52d0cf118fd17e848e5d11f76ee3a:login.php
                             </select>
                         </p>
                         <p>
