@@ -34,11 +34,8 @@
             <div class="content-form">
                 <div class="contact-form">
                     <h3>Registrate</h3>
-<<<<<<< HEAD:login.php
+
                     <form action="PHP/validarRegistro.php" method="POST" id="formulario">
-=======
-<<<<<<< HEAD:registro.php
-                    <form action="validarRegistro.php" method="POST">
                         <p>
                             <label for="nombre">Nombre: </label>                    
                             <input type="text" placeholder="Nombre(s)" name="nombre" id="nombre" autocomplete="off" required>
@@ -50,9 +47,7 @@
                         <p>
                             <label for="apellido">Apellido materno: </label>
                             <input type="text" placeholder="Apellido Materno" name="apellido" id="apellido" autocomplete="off" required>
-=======
                     <form action="validarRegistro.php" method="POST" id="formulario">
->>>>>>> 37d6f42a8536291c7bfbdf59658b32f6e0ad3f04:registro.php
                         <p>                    
                             <input type="text" placeholder="Nombre(s)" name="nombre" id="nombre" autocomplete="off" required>
                         </p>
@@ -61,7 +56,6 @@
                         </p>
                         <p>
                             <input type="text" placeholder="Apellido materno" name="apellidoM" id="apellidoM" autocomplete="off" required>
->>>>>>> 47001940bab52d0cf118fd17e848e5d11f76ee3a:login.php
                         </p>
                         <p>
                             <label for="sexo">Sexo: </label>
@@ -79,7 +73,6 @@
                             <label for="pass">Contraseña (maximo 8 digitos):</label>                            
                             <input type="password" placeholder="Contraseña" name="pass" id="pass" required>
                         </p>
-<<<<<<< HEAD:registro.php
                         <p> 
                             <label for="fecha">fecha de nacimiento: </label>                           
                             <input type="date" name="fecha" id="fecha" placeholder="fecha de nacimiento" autocomplete="off" required>
@@ -101,7 +94,6 @@
                                 <option value="0">Colonia
                                 <option value="masculino">Masculino</option> 
                                 <option value="femenino">Femenino</option> 
-=======
                         <p>                            
                             <input type="date" name="fecha" id="fecha" autocomplete="off" required>
                         </p>
@@ -115,8 +107,6 @@
                         <p>
                             <select name="municipio" id="selectMunicipio"  type="combo" placeholder="Municipio">
                             <option value="" selected disabled hidden>Municipio </option>
-
->>>>>>> 47001940bab52d0cf118fd17e848e5d11f76ee3a:login.php
                             </select>
                         </p>
                         <p>
