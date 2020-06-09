@@ -1,3 +1,4 @@
+<?php include "persona.php"?>
 <!DOCTYPE html>
 <html lang="es"> 
 <head>
@@ -27,12 +28,20 @@
     $pass = limpiarVariable($_POST['pass']);
     $fecha = date('Y-m-d', strtotime($_POST['fecha']));
     $estado = $_POST['estado'];
-    //$municipio = $_POST['municipio'];
-    //$colonia = $_POST['colonia'];
 
-    echo "Nombre:",$nombre," Apellido P",$apeP," Apellido M",$apeM," sexo",$sexo," Correo",$correo," Pass:",$pass," Fecha nacimiento",$fecha," Estado:",$estado;
+    // Creacion del objeto persona
+    $persona = new Persona();
+    $persona->setNombre($nombre);
+    $persona->setApellidoP($apeP);
+    $persona->setApellidoM($apeM);
+    $persona->setCorreo($correo);
+    $persona->setPass($pass); //
+    $persona->setSexo($sexo);
+    $persona->setfechaNacimiento($fecha);
+    $persona->setidEstado($estado);
+    $persona->setidMunicipio($estado);
+    $persona->setidColonia($estado);
 
-    
     // Funcion que "limpia" las variables.
     function limpiarVariable($varSucia){
         $varLimpia;

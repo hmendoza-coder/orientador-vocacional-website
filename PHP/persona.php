@@ -1,14 +1,15 @@
 <?php
-    class Usuario{
-        //id necesario?
+    class Persona{
         private $nombre;
         private $apellidoP;
         private $apellidoM;
-        //credencia?
-        private $sexo;
         private $correo;
+        private $pass;
+        private $sexo;
         private $fechaNacimiento;
-        //private $idDomicilio;  Objeto de tipo domicilio
+        private $idEstado;
+        private $idMunicipio;
+        private $idColonia;
 
         public function setNombre($string){
             $this->nombre = $string;
@@ -17,16 +18,60 @@
             $this->apellidoP = $string;
         }
         public function setApellidoM($string){
-            $this->setApellidoM = $string;
+            $this->apellidoM = $string;
         }
+        public function setCorreo($string){
+            $this->correo = $string;
+        }
+        public function setPass($string){
+            $this->pass = $string;
+        }
+        public function setSexo($string){
+            $this->sexo = $string;
+        }
+        public function setfechaNacimiento($string){
+            $this->fechaNacimiento = $string;
+        }
+        public function setidEstado($string){
+            $this->idEstado = $string;
+        }
+        public function setidMunicipio($string){
+            $this->idMunicipio = $string;
+        }
+        public function setidColonia($string){
+            $this->idColonia = $string;
+        }
+               
+        //Get
         public function getNombre(){
-            return $this->$nombre;
+            return $this->nombre;
         }
         public function getApellidoP(){
-            return $this->$apellidoP;
+            return $this->apellidoP;
         }
         public function getApellidoM(){
-            return $this->$apellidoM;
+            return $this->apellidoM;
+        }
+        public function getCorreo(){
+            return $this->correo;
+        }
+        public function getPass(){
+            return $this->pass;
+        }
+        public function getSexo(){
+            return $this->sexo;
+        }
+        public function getfechaNacimiento(){
+            return $this->fechaNacimiento;
+        }
+        public function getidEstado(){
+            return $this->idEstado;
+        }
+        public function getidMunicipio(){
+            return $this->idMunicipio;
+        }
+        public function getidColonia(){
+            return $this->idColonia;
         }
     }
 ?>

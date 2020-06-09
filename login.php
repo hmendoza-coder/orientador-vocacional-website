@@ -34,7 +34,7 @@
             <div class="content-form">
                 <div class="contact-form">
                     <h3>Registrate</h3>
-                    <form action="validarRegistro.php" method="POST" id="formulario">
+                    <form action="PHP/validarRegistro.php" method="POST" id="formulario">
                         <p>                    
                             <input type="text" placeholder="Nombre(s)" name="nombre" id="nombre" autocomplete="off" required>
                         </p>
@@ -47,8 +47,8 @@
                         <p>
                             <select name="sexo" id="sexo"  placeholder="Sexo">
                                 <option value="" selected disabled hidden>Sexo</option>
-                                <option value="masculino">Masculino</option> 
-                                <option value="femenino">Femenino</option> 
+                                <option value="h">Masculino</option> 
+                                <option value="m">Femenino</option> 
                             </select>
                         </p>
                         <p>                            
@@ -63,7 +63,7 @@
                         <p>
                             <select name="estado" id="selectEstado"  type="combo" placeholder="Estado" onchange="getIDEstado()" required>
 		                    <option value="" selected disabled hidden>Estado </option>
-                            <?php include 'C:\xampp\htdocs\orientador-vocacional-website\PHP\consumir.php';
+                            <?php include 'PHP\consumir.php';
                             iniciar("Estado"); ?>
                             </select>
                         </p>
