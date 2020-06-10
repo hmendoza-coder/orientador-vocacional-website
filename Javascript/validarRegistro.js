@@ -11,8 +11,7 @@ function validarFormulario(){
 		var txtEstado;
 	
 		if(document.getElementById('selectEstado') != ""){
-			txtEstado = document.getElementById('estado');
-			console.log(txtEstado);
+			txtEstado = document.getElementById('selectEstado');
 		}else{
 			console.log("No hay valores de estado")
 			return false;
@@ -84,7 +83,7 @@ function validarFormulario(){
 			return false;
 		}
 		else{
-			//validarEmail(txtCorreo);
+			//validarEmail(txtCorreo);  pero parece que hay algo mal con la validacion
 		}
 
 		if(txtPass == null || txtPass.length == 0 || /^\s+$/.test(txtPass)){
@@ -107,19 +106,14 @@ function validarFormulario(){
 		else{
 			calcularEdad(txtFechaNacimiento);
 		}
-
- 		//Validacion de correo
-		/*if(!(/\S+@\S+\.\S+/.test(txtCorreo))){
-			if(txtSexo == null || txtSexo.length == 0 || /^\s+$/.test(txtSexo)){
-				Swal.fire(
-					'Correo no válido.',
-					'Este correo no esta permitido, por favor escribe uno valido.',
-					'error'
-				)
-				return false;
-			}
+		if(txtEstado == null || txtEstado.length == 0 || /^\s+$/.test(txtEstado)){
+			Swal.fire(
+				'Elige un estado.',
+				'Este campo es obligatorio, por favor selecciona un valor.',
+				'question'
+			)
 			return false;
-		}*/
+		}
  		
 		return true;
 	}
@@ -152,8 +146,6 @@ function validarFormulario(){
 		var fechaNacim = new Date(fechaNacimiento);
 		var fechaActual = new Date();
 		var edad = fechaActual.getFullYear() - fechaNacim.getFullYear();
-		console.log("edad");
-		console.log(edad);
 		if(edad < 12 || edad > 100){
 			Swal.fire(
 				'Fecha de nacimiento incorrecta.',

@@ -40,12 +40,12 @@
                                 <input type="text" placeholder="Nombre(s)" name="nombre" id="nombre" autocomplete="off" required>
                             </p>
                             <p>
-                                <label for="apellido">Apellido paterno: </label>
-                                <input type="text" placeholder="Apellido Paterno" name="apellido" id="apellido" autocomplete="off" required>
+                                <label for="apellidop">Apellido paterno: </label>
+                                <input type="text" placeholder="Apellido Paterno" name="apellidop" id="apellidoP" autocomplete="off" required>
                             </p>
                             <p>
-                                <label for="apellido">Apellido materno: </label>
-                                <input type="text" placeholder="Apellido Materno" name="apellido" id="apellido" autocomplete="off" required>
+                                <label for="apellidom">Apellido materno: </label>
+                                <input type="text" placeholder="Apellido Materno" name="apellidom" id="apellidoM" autocomplete="off" required>
                             </p>
                                 <label for="sexo">Sexo: </label>
                                 <select name="sexo" id="sexo"  placeholder="Sexo">
@@ -56,7 +56,7 @@
                             </p>
                         <p> 
                             <label for="correo">Correo electronico: </label>                           
-                            <input type="email" placeholder="Correo electronico" name="correo" id="correo" autocomplete="off" required>
+                            <input type="email" placeholder="Correo electrónico" name="correo" id="correo" autocomplete="off" required>
                         </p>
                         <p>
                             <label for="pass">Contraseña (maximo 8 digitos):</label>                            
@@ -68,13 +68,14 @@
                         </p>
                         <p>
                             <label for="estado">Estado: </label>
-                            <select name="estado" id="selectEstado"  type="combo" placeholder="Estado" onchange="getIDEstado()" required>
+                            <select name="estado" id="selectEstado"  type="combo" placeholder="Estado" onchange="getIDMunicipio(); return false;" required>
 		                    <option value="" selected disabled hidden>Estado </option>
                             <?php include 'PHP\consumir.php';
                             iniciar("Estado"); ?>
                             </select>
                         </p>
                         <p>
+                            <div class="divMun"></div>
                         <label for="municipio">Municipio: </label>
                             <select name="municipio" id="selectMunicipio"  type="combo" placeholder="Municipio">
                             <option value="" selected disabled hidden>Municipio </option>

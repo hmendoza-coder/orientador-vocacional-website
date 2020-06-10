@@ -9,10 +9,11 @@
         <meta name= "viewport" content="width=device-width, initial-scale-1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Orientador vocacional</title>
-        <!--Scripts-->
+		<!--Scripts-->
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
         <!--Estilos-->
-        <link rel="stylesheet" href="estiloLogin.css">
+        <link rel="stylesheet" href="estiloRegistro.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 	    <!--Titulos-->
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
@@ -21,6 +22,14 @@
     </head>
 	<body>
 	<?php
+	if(isset($_POST['selectEstado'])){
+		$idEstado = $_POST['selectEstado'];
+		console.log("El valor estado existe");
+	}
+	if(isset($_POST['selectMunicipio'])){
+		$idMunicipio = $_POST['selectMunicipio'];
+		console.log("El valor municipio existe");
+	}
 
 	//Codificacion
 	function Consumir($url,$llave){
@@ -67,17 +76,14 @@
 	}
 
 	function selectAPI($datos, $llave){
-		if($llave = "Estado"){
-			$variable = "idEstado";
+		$variable = "idEstado";
+		foreach ($datos as $value) {
+			?><option value="<?php echo $value[$variable]?>"><?php echo $value['nombre']?></option><?php
 		}
-		else{
-			$variable = "idMunicipio";
-		}
-			
-		?>     
-	<!--	<select name="estado" id="selectEstado"  type="combo" placeholder="Estado" onchange="getIDEstado()"> -->
-	<!--	<option value="" selected disabled hidden>Estado de residencia</option> -->
-		<?php
+	}
+
+	function selectMunicipio(){
+		$variable = "idMunicipio";
 		foreach ($datos as $value) {
 			?><option value="<?php echo $value[$variable]?>"><?php echo $value['nombre']?></option><?php
 		}

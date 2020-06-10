@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orientador vocacional</title>
-    <link rel="stylesheet"href="estilosV2.css">
+    <link rel="stylesheet"href="estilosLogin.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
 
 </head>
 <body>
     
-    <form action="indexV2.html" class="form-box">
+    <form action="PHP/validar.php" class="form-box" method="POST">
         
         <!--hola que hacen?-->
         <!--AQUI ESTA EL BOTON DE CIERRE DE SESION QUE DEBE AVISAR A LA API QUE SE HA CERRADO SESION-->
@@ -21,17 +21,18 @@
         </button>
         <img class="avatar" src="imagenes/birrete.jpg" alt="logo del orientador">
         <h1 class="form-title">Sign In</h1>
-        <input type ="text" placeholder="Username">
-        <input type="password" placeholder="Password">
-        <button type="submit">
-            Login
+        <input type ="text" placeholder="Correo electrónico" id="correo" required>
+        <input type="password" placeholder="Contraseña" id="pass" required>
+        <button type="submit" onclick="return validarSesion();">
+            Iniciar sesión
         </button>
         <!--AQUI ESTA EL ENLACE PARA LA PAGINA DE REGISTRO-->
         <footer>
             <!--<a href="#">¿Olvidaste tu contraseña?</a>-->
-            <a href="login.html">¿Eres nuevo? Registrate aqui</a>
+            <a href="registro.php">¿Eres nuevo? Registrate aqui</a>
         </footer>
     </form>
 
+<script src="Javascript/validar.js"></script>
 </body>
 </html>
