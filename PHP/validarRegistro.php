@@ -25,11 +25,11 @@ include "Cliente.php";?>
     $apeM = limpiarVariable($_POST["apellidoM"]);
     $sexo = limpiarVariable($_POST['sexo']);
     $correo = limpiarVariable($_POST['correo']);
-    $pass = limpiarVariable($_POST['pass']);
+    $password = limpiarVariable($_POST['pass']);
     $fecha = date('Y-m-d', strtotime($_POST['fecha']));
-    $estado = $_POST['estado'];
+    $estado = $_POST['selectEstado'];
     $municipio = '0001';    //pendientes
-    $colonia = '10085';     //pendientes
+    $colonia = 10085;     //pendientes
 
     // Creacion del objeto persona
     $persona = new Persona();
@@ -37,7 +37,7 @@ include "Cliente.php";?>
     $persona->setApellidoP($apeP);
     $persona->setApellidoM($apeM);
     $persona->setCorreo($correo);
-    $persona->setPass($pass); //
+    $persona->setPass($password); //
     $persona->setSexo($sexo);
     $persona->setfechaNacimiento($fecha);
     $persona->setidEstado($estado);
@@ -46,14 +46,11 @@ include "Cliente.php";?>
 
     $json = json_encode($persona);
     $url = 'http://localhost:52899/Persona';
-
+    echo $json;
     $response = callAPI("POST",$url,$json);
     if($response)
     {
-        /* if($response->status)
-        {
-            echo $id_sesesion; //asdasd
-        }   */ 
+        echo $response;
     }
     else
     {

@@ -1,10 +1,10 @@
 <?php
     class Persona{
-        public $nombre;
+        public $nombres;
         public $apellidoP;
         public $apellidoM;
         public $correo;
-        public $pass;
+        public $password;
         public $sexo;
         public $fechaNacimiento;
         public $idEstado;
@@ -12,7 +12,7 @@
         public $idColonia;
 
         public function setNombre($string){
-            $this->nombre = $string;
+            $this->nombres = $string;
         }
         public function setApellidoP($string){
             $this->apellidoP = $string;
@@ -24,7 +24,7 @@
             $this->correo = $string;
         }
         public function setPass($string){
-            $this->pass = $string;
+            $this->password = $string;
         }
         public function setSexo($string){
             $this->sexo = $string;
@@ -44,7 +44,7 @@
                
         //Get
         public function getNombre(){
-            return $this->nombre;
+            return $this->nombres;
         }
         public function getApellidoP(){
             return $this->apellidoP;
@@ -56,7 +56,7 @@
             return $this->correo;
         }
         public function getPass(){
-            return $this->pass;
+            return $this->password;
         }
         public function getSexo(){
             return $this->sexo;
