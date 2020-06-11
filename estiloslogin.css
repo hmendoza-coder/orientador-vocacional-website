@@ -84,8 +84,20 @@ body{
     position:absolute; 
     top:5px; 
     right:80px;
+    color:white;
 }
-
+.cierre {
+    line-height: 12px; 
+    width: 18px; 
+    font-size: 8pt; 
+    font-family: 'Poppins', sans-serif;
+    font-size: 16;
+    margin-top: 1px; 
+    margin-right: 2px; 
+    position:absolute; 
+    top:5px; 
+    right:80px;
+}
 .form-box a{
     text-decoration: none;
     color: rgb(56, 56, 56);
