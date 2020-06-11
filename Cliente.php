@@ -19,7 +19,7 @@ function callAPI($method, $url, $data){
          break;
       default:
          if ($data)
-            $url = sprintf("%s?%s", $url, http_build_query($data));
+            {$url = sprintf("%s?%s", $url, http_build_query($data));}
    }
 
    // OPTIONS:
@@ -27,7 +27,7 @@ function callAPI($method, $url, $data){
    curl_setopt($curl, CURLOPT_HTTPHEADER, array(
       'APIKEY: 111111111111111111111',
       'Content-Type: application/json',
-	   $_SESSION['token'] ? 'Authorization : Bearer ' . $_SESSION['token'] : 'Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNpYWMiLCJyb2xlIjoiMSIsInByaW1hcnlzaWQiOiI1MSIsIm5iZiI6MTU4Mzk2NTk2NiwiZXhwIjoxNTg0NTcwNzY2LCJpYXQiOjE1ODM5NjU5NjYsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTE2NyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTE2NyJ9.4E9WTGCPPwcouV3r5J8cN8D5ONqiPLJfjDJGrFyJD18',
+      'Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNpYWMiLCJyb2xlIjoiMSIsInByaW1hcnlzaWQiOiI1MSIsIm5iZiI6MTU4Mzk2NTk2NiwiZXhwIjoxNTg0NTcwNzY2LCJpYXQiOjE1ODM5NjU5NjYsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTE2NyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTE2NyJ9.4E9WTGCPPwcouV3r5J8cN8D5ONqiPLJfjDJGrFyJD18',
    ));
    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
    curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);

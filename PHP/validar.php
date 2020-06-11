@@ -1,4 +1,5 @@
 <?php include "persona.php"?>
+<?php include "../cliente.php"?>
 <!DOCTYPE html>
 <html lang="es"> 
     <head>
@@ -19,10 +20,26 @@
     </head>
 <body>
 <?php
-    $correo = limpiarVariable($_POST["correo"]);
-    $pass = limpiarVariable($_POST["pass"]);
 
+    $credencial = array(
+        "Correo" => limpiarVariable($_POST["correo"]),
+        "Password" => limpiarVariable($_POST["pass"])
+        );
 
+    $response = json_decode(callAPI('GET', "http://localhost:52899/Sesion/login",$credencial));
+
+    if($response)
+    {
+        if($response->status)
+        {
+            $id_sesesion = $response->datos->idSesion;
+            echo $id_sesesion;
+        }   
+    }
+    else
+    {
+        echo "Ocurrio un error: ";
+    }
 
     function limpiarVariable($varSucia){
         $varLimpia;
