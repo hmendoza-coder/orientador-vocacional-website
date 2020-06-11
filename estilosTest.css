@@ -1,38 +1,163 @@
-/*AQUI INTENTO COLOCAR EL LOGO EN LA ORILLA JUNTO AL titulo, PERO NO ME SALEEEEEE*/
-h1{
-	font-family: 'Righteous', ;
-	font-size: 80px;
+body,html{
+    height: 100%;
+}
+
+ h1{
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 50px;
 	font-weight: bold;
-	color: rgb(0, 38, 255);
+	color: rgb(24, 23, 23);
 	text-align: left;
 	border: 2px;
     padding: 3px;
     margin: auto 20px;
-	/*background-image: url("imagenes/logo3.PNG");*/
-
 }
-
-h2 {
-	font-family: 'Bree Serif', ;
-	font-size: 50px;
+ h2 {
+	font-family: 'Poppins', sans-serif;
+	font-size: 30px;
 	font-weight: bold;
 	text-align: center;
-    margin: auto 20px;
-    border: 2px solid rgb(61, 152, 194);
-	color: rgb(7, 7, 7);
+    margin: 40px 20px;
+	border: none;
+	background: rgba(0, 0, 255, 0.062);
+	padding: 0px;
+	color: rgb(29, 29, 29);
+	text-align: center;
 }
-body{
-	font-family: 'Bree Serif', ;
-	font-size: 20px;
-	font-weight: bold;
-    text-align: left;
-	color: rgb(8, 8, 8);
-	background-image: url("imagenes/blu.jpg");
-	background-size: 1400px 1080px;
+ body{
+	margin:0;
+    background-image: url("imagenes/blu.jpg");
+    background-size: cover;
+    background-position : center center;
+    background-attachment: fixed;
+    padding: 0;
+    height: 100vh;
+    font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+    display: block;
+    flex-direction: row;
+    flex-wrap: wrap;
+	color: rgb(34, 34, 34);
+
 }
 
+.box-test{
+	display: grid;
+    grid-template-columns: 1fr;
+	position: relative;
+
+	width: 700px;
+	padding: 90px 70px;
+	left: 300px;
+	right: 100px;
+    background: #ebeaea34;
+	text-align: center;
+	
+	align-self: center;
+	justify-self: center;
+}
+
+label{
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	margin: 40px 20px;
+	text-align: left;
+}
 .instruccion{
     border: 2px;
     padding: 3px;
-    margin: 50px;
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	margin: 40px 20px;
+}
+.form-test label{
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	margin: 0px;
+	padding: 0px;
+	text-align: left;
+}
+.form-test li{
+
+	text-align: left;
+}
+
+/*TABLA*/
+.test table{
+	border-collapse: collapse;
+	width: 42%;
+}
+
+.test th,td{
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even){
+	background: gray;
+}
+/*BOTON ENVIAR*/
+.form-test button[type="submit"]{
+    font-size: 12px;
+	font-family: 'Bree Serif', ;
+    color: white;
+    border:0;
+    background: rgb(3, 184, 197);
+   
+    border: 2px solid gray;    
+    border-radius: 10px;
+    width: 200px;
+    padding: 14px 10px;
+    display: block;
+    margin: 20px auto;
+    outline: none;
+    transition: 0.25s;
+}
+
+.form-test button[type="submit"]:hover,
+.form-test button[type="submit"]:focus{
+    
+    color: rgb(26, 24, 24);
+    background: none;
+    cursor: pointer;
+}
+
+/*DISEÑO DEL BOTON DE CIERRE*/
+.afuera button[type="submit"]{
+   
+    line-height: 12px; 
+    width: 18px; 
+    font-size: 8pt; 
+    font-family: 'Poppins', sans-serif; 
+    
+    margin-top: 1px; 
+    margin-right: 2px; 
+    position:absolute;
+
+    top:9px; 
+    right:80px;
+    display: block;
+    margin:20px auto;
+    font-size: 12px;
+	
+    border:0;
+    background: rgb(3, 184, 197);
+    border: 2px solid gray;
+    text-transform: uppercase;
+    border-radius: 10px;
+    padding: 14px 10px;
+    width: 50px;
+    text-decoration: none;
+}
+.afuera a{
+    text-decoration: none;
+    color: white;
+}
+.afuera button[type="submit"]:hover,
+.afuera button[type="submit"]:focus{
+    
+    color: rgb(26, 24, 24);
+    background: none;
+    cursor: pointer;
+    
 }
