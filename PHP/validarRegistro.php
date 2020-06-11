@@ -43,7 +43,7 @@ include "Cliente.php";?>
     $persona->setidColonia($estado);
 
     $json = json_encode($persona, true);
-    $url = 'https://localhost:44373/Persona';
+    $url = 'https://localhost:52899/Persona';
 
     $response = callAPI("POST",$url,$json);
     if($response)
