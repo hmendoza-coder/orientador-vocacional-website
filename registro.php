@@ -41,11 +41,11 @@
                             </p>
                             <p>
                                 <label for="apellidop">Apellido paterno: </label>
-                                <input type="text" placeholder="Apellido Paterno" name="apellidop" id="apellidoP" autocomplete="off" required>
+                                <input type="text" placeholder="Apellido Paterno" name="apellidoP" id="apellidoP" autocomplete="off" required>
                             </p>
                             <p>
                                 <label for="apellidom">Apellido materno: </label>
-                                <input type="text" placeholder="Apellido Materno" name="apellidom" id="apellidoM" autocomplete="off" required>
+                                <input type="text" placeholder="Apellido Materno" name="apellidoM" id="apellidoM" autocomplete="off" required>
                             </p>
                                 <label for="sexo">Sexo: </label>
                                 <select name="sexo" id="sexo"  placeholder="Sexo">

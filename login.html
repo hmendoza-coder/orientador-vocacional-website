@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orientador vocacional</title>
-    <link rel="stylesheet"href="estilosLogin.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
-
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <!--<meta name= "viewport" content="width=device-width, initial-scale-1.0">       esta cosa da error en consola-->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Orientador vocacional</title>
+        <!--Scripts-->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <!--Estilos-->
+        <link rel="stylesheet" href="estiloslogin.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+	    <!--Titulos-->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
+        <link href='http://fonts.googleapis.com/css?family=Neucha' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+    </head>
 <body>
     
     <form action="PHP/validar.php" class="form-box" method="POST">
@@ -21,11 +28,11 @@
         </button>
         <img class="avatar" src="imagenes/birrete.jpg" alt="logo del orientador">
         <h1 class="form-title">Sign In</h1>
-        <input type ="text" placeholder="Correo electrónico" id="correo" required>
-        <input type="password" placeholder="Contraseña" id="pass" required>
-        <button type="submit" onclick="return validarSesion();">
-            Iniciar sesión
-        </button>
+        <input type ="text" placeholder="Correo electrónico" id="correo" autocomplete="off" required>
+        <input type="password" placeholder="Contraseña" id="pass" autocomplete="off" required>
+            <button type="submit" onclick="return validarSesion();">  
+                Iniciar sesión
+            </button>
         <!--AQUI ESTA EL ENLACE PARA LA PAGINA DE REGISTRO-->
         <footer>
             <!--<a href="#">¿Olvidaste tu contraseña?</a>-->
