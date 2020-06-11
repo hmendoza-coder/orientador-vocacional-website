@@ -114,7 +114,7 @@
                     </form>
                 </div>
                 
-                <!--Este apartado es para info sobre el equipo y posibilidad de contacto con el usuario para dudas-->
+                <!--Este apartado es para info sobre el equipo y posibilidad de contacto con el usuario para dudas dudosas-->
                 <div class="contact-info">
                     <h3>Más información y contacto</h3>
                     <ul>
