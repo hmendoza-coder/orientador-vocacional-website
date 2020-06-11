@@ -47,6 +47,7 @@
                                 <label for="apellidom">Apellido materno: </label>
                                 <input type="text" placeholder="Apellido Materno" name="apellidoM" id="apellidoM" autocomplete="off" required>
                             </p>
+                            <p>
                                 <label for="sexo">Sexo: </label>
                                 <select name="sexo" id="sexo"  placeholder="Sexo">
                                     <option value="" selected disabled hidden>Sexo</option>
@@ -54,40 +55,39 @@
                                     <option value="m">Femenino</option> 
                                 </select>
                             </p>
-                        <p> 
-                            <label for="correo">Correo electronico: </label>                           
-                            <input type="email" placeholder="Correo electrónico" name="correo" id="correo" autocomplete="off" required>
-                        </p>
-                        <p>
-                            <label for="pass">Contraseña (maximo 8 digitos):</label>                            
-                            <input type="password" placeholder="Contraseña" name="pass" id="pass" required>
-                        </p>
-                        <p> 
-                            <label for="fecha">fecha de nacimiento: </label>                           
-                            <input type="date" name="fecha" id="fecha" autocomplete="off" required>
-                        </p>
-                        <p>
-                            <label for="estado">Estado: </label>
-                            <select name="estado" id="selectEstado"  type="combo" placeholder="Estado" onchange="getIDMunicipio(); return false;" required>
-		                    <option value="" selected disabled hidden>Estado </option>
-                            <?php include 'PHP\consumir.php';
-                            iniciar("Estado"); ?>
-                            </select>
-                        </p>
-                        <p>
-                            <div class="divMun"></div>
-                        <label for="municipio">Municipio: </label>
-                            <select name="municipio" id="selectMunicipio"  type="combo" placeholder="Municipio">
-                            <option value="" selected disabled hidden>Municipio </option>
-                            </select>
-                        </p>
-                        <p>
-                        <label for="colonia">Colonia: </label>
-                            <select name="colonia" id="selectColonia"  type="combo" placeholder="Colonia" >
-                            <option value="" selected disabled hidden>Colonia </option>
-                            </select>
-                            <!-- -->
-                        </p>
+                            <p> 
+                                <label for="correo">Correo electronico: </label>                           
+                                <input type="email" placeholder="Correo electrónico" name="correo" id="correo" autocomplete="off" required>
+                            </p>
+                            <p>
+                                <label for="pass">Contraseña (maximo 8 digitos):</label>                            
+                                <input type="password" placeholder="Contraseña" name="pass" id="pass" required>
+                            </p>
+                            <p> 
+                                <label for="fecha">fecha de nacimiento: </label>                           
+                                <input type="date" name="fecha" id="fecha" autocomplete="off" required>
+                            </p>
+                            <p>
+                                <label for="estado">Estado: </label>
+                                <select name="estado" id="selectEstado"  type="combo" placeholder="Estado" onchange="getIDMunicipio(); return false;" required>
+                                <option value="" selected disabled hidden>Estado </option>
+                                <?php include 'PHP\consumir.php';
+                                iniciar("Estado"); ?>
+                                </select>
+                            </p>
+                            <p>
+                                <label for="municipio">Municipio: </label>
+                                <select name="municipio" id="selectMunicipio"  type="combo" placeholder="Municipio">
+                                <option value="" selected disabled hidden>Municipio </option>
+                                </select>
+                            </p>
+                            <p>
+                            <label for="colonia">Colonia: </label>
+                                <select name="colonia" id="selectColonia"  type="combo" placeholder="Colonia" >
+                                <option value="" selected disabled hidden>Colonia </option>
+                                </select>
+                                <!-- -->
+                            </p>
                         <p class="bloque" onclick = "return validarFormulario();">
                             <button type="submit">
                                 Aceptar
