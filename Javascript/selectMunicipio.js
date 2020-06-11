@@ -1,4 +1,4 @@
-function getIDMunicipio(){
+/*function getIDMunicipio(){
     var idEstado = $("#selectEstado").val();
     var direccion = "https://localhost:44373/Municipio/" + idEstado;
     var datos = {direccion : direccion};
@@ -17,11 +17,11 @@ function getIDMunicipio(){
             });
         }
     })
-}
+}*/
 
 
 function getIDEstado() {
         var idEstado = document.getElementById("selectEstado").value;
-        var direccion = "https://localhost:44373/Municipio/" + idEstado;
+        var direccion = "http://localhost:52899/Municipio/" + idEstado;
         console.log(direccion);
 }

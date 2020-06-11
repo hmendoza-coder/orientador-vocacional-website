@@ -42,7 +42,7 @@
                     <h3>Registrate</h3>
                         <form action="PHP/validarRegistro.php" method="POST" id="formulario">
                             <p>
-                                <label id="nombre" for="nombre" class="name" > Nombre </label> 
+                                <label id="lblnombre" for="nombre" class="name" > Nombre </label> 
                                 <input type="text" name="nombre" id="nombre" placeholder="Nombre" autocomplete="off" required>
                                                  
                             </p>
@@ -59,7 +59,7 @@
                                 
                             </p>
                             <p>
-                                <label for="pass" class="password">Contraseña</label> 
+                                <label for="password" class="password">Contraseña</label> 
                                 <input type= "password" name="pass" id="pass" placeholder="Contraseña" required>
                                                            
                                 
@@ -80,14 +80,13 @@
                         </p>
                         
                         <p> 
-                            
-                            <label id="fecha" for="fecha" class="fecha" >Fecha de nacimiento</label>                          
+                            <label id="fechaN" for="fecha" class="fecha" >Fecha de nacimiento</label>                          
                             <input type="date" name="fecha" id="fecha" autocomplete="off" required>
                             <!--<label for="fecha">fecha de nacimiento: </label>  -->
                         </p>
                         <p>
                             <label>Estado</label>
-                            <select name="estado" id="selectEstado"  type="combo" onchange="getIDEstado()" required>
+                            <select name="selectEstado" id="selectEstado"  type="combo" onchange="getIDEstado()" required>
 		                    <option value="" selected disabled hidden>Estado </option>
                             <?php include 'PHP\consumir.php';
                             iniciar("Estado"); ?>

@@ -50,10 +50,10 @@ include "Cliente.php";?>
     $response = callAPI("POST",$url,$json);
     if($response)
     {
-        if($response->status)
+        /* if($response->status)
         {
             echo $id_sesesion; //asdasd
-        }   
+        }   */ 
     }
     else
     {
