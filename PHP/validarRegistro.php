@@ -2,14 +2,13 @@
 include "Cliente.php";?>
 <!DOCTYPE html>
 <html lang="es"> 
-<head>
+    <head>
         <meta charset="UTF-8">
         <!--<meta name= "viewport" content="width=device-width, initial-scale-1.0">       esta cosa da error en consola-->
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Orientador vocacional</title>
         <!--Scripts-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <!--Estilos-->
         <link rel="stylesheet" href="estiloRegistro.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
@@ -29,6 +28,9 @@ include "Cliente.php";?>
     $pass = limpiarVariable($_POST['pass']);
     $fecha = date('Y-m-d', strtotime($_POST['fecha']));
     $estado = $_POST['estado'];
+    $municipio = '0001';    //pendientes
+    $colonia = '10085';     //pendientes
+
     // Creacion del objeto persona
     $persona = new Persona();
     $persona->setNombre($nombre);
@@ -39,20 +41,25 @@ include "Cliente.php";?>
     $persona->setSexo($sexo);
     $persona->setfechaNacimiento($fecha);
     $persona->setidEstado($estado);
-    $persona->setidMunicipio($estado);
-    $persona->setidColonia($estado);
+    $persona->setidMunicipio($municipio);
+    $persona->setidColonia($colonia);
 
-    $json = json_encode($persona, true);
-    $url = 'https://localhost:52899/Persona';
+    $json = json_encode($persona);
+    $url = 'http://localhost:52899/Persona';
 
     $response = callAPI("POST",$url,$json);
     if($response)
     {
         if($response->status)
         {
-            echo "Correcto?";
+            echo $id_sesesion; //asdasd
         }   
     }
+    else
+    {
+        echo "Ocurrio un error: ";
+    }
+    
 
     // Funcion que "limpia" las variables.
     function limpiarVariable($varSucia){

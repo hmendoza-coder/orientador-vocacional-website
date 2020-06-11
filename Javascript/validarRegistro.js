@@ -13,10 +13,14 @@ function validarFormulario(){
 		if(document.getElementById('selectEstado') != ""){
 			txtEstado = document.getElementById('selectEstado');
 		}else{
-			console.log("No hay valores de estado")
+			Swal.fire(
+				'Estado es campo obligatorio.',
+				'Este campo es obligatorio NO debe ir vacio o solo con espacios,',
+				'question'
+			)
 			return false;
 		}
-		//Validacion de nombre
+		
 		if(txtNombre == null || txtNombre.length == 0 || /^\s+$/.test(txtNombre)){
 			Swal.fire(
 				'Nombre es campo obligatorio.',

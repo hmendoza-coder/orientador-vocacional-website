@@ -60,7 +60,8 @@
 	function API($ruta){
 
 		//Ruta raiz de la API
-		$url = "https://localhost:44373/";
+		$url = "http://localhost:52899/";
+		
 		$direccion = $url . $ruta;
 		return $direccion;
 	}

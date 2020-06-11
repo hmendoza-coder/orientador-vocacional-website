@@ -48,19 +48,19 @@
                             </p>
                             <p>
                                 <label id="apellidop" for="apellido" class="apmaterno">Apellido paterno </label>
-                                <input type="text" name="apellido" id="apellido" placeholder="Apellido paterno" autocomplete="off" required>
+                                <input type="text" name="apellidoP" id="apellidoP" placeholder="Apellido paterno" autocomplete="off" required>
                                 
                                 
                             </p>
                             <p>
                                 <label for="apellido" class="appaterno">Apellido materno </label>
-                                <input type="text" name="apellido" id="apellido" placeholder="Apellido materno" autocomplete="off" required>
+                                <input type="text" name="apellidoM" id="apellidoM" placeholder="Apellido materno" autocomplete="off" required>
                                 
                                 
                             </p>
                             <p>
                                 <label for="pass" class="password">Contraseña</label> 
-                                <input type= "password" name="password" id="password" placeholder="Contraseña" required>
+                                <input type= "password" name="pass" id="pass" placeholder="Contraseña" required>
                                                            
                                 
                             </p>
