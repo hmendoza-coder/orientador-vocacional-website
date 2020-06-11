@@ -43,31 +43,7 @@ h3{
 	padding: 2px;
     color:rgb(26, 25, 25);
 }
-/*AQUI CONTACT-FORM que toma solo el registro*/
-.contact-form input[type="text"],
-.contact-form input[type="date"],
-.contact-form input[type="email"],
-.contact-form select,
-.contact-form input[type="password"]{
-    border:0;
-    background: none;
-    display: block;
-    margin:20px auto;
-    padding: 14px 10px;
-    border:2px solid gray;
-    width: 200px;
-    outline: none;
-    color:rgb(19, 18, 18);
-    border-radius: 10px;
-    transition: 0.25s;
-}
-.contact-form input[type="text"]:focus,
-.contact-form input[type="date"]:focus,
-.contact-form input[type="email"]:focus,
-.contact-form input[type="password"]:focus{
-    width: 280px;
-    border-color: rgb(36, 84, 243);
-}
+
 /*BOTONES LISTOS*/
 .contact-form button[type="submit"]{
     
@@ -88,6 +64,7 @@ h3{
 .contact-form form{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    position: relative;
 }
 .contact-form form button:hover,
 .contact-form form button:focus{
@@ -164,49 +141,95 @@ h3{
 }
 
 /*DISEÑO DEL BOTON DE CIERRE*/
-.cierre {
+.afuera button[type="submit"]{
    
     line-height: 12px; 
     width: 18px; 
     font-size: 8pt; 
     font-family: 'Poppins', sans-serif; 
-    font-size: 16;
+    
     margin-top: 1px; 
     margin-right: 2px; 
-    position:absolute; 
-    top:0px; 
+    position:absolute;
 
-    right:20px;
+    top:12px; 
+    right:80px;
     display: block;
     margin:20px auto;
     font-size: 12px;
-	font-family: 'Bree Serif', ;
-    color: white;
+	
     border:0;
     background: rgb(3, 184, 197);
-    cursor: pointer;
     border: 2px solid gray;
     text-transform: uppercase;
     border-radius: 10px;
     padding: 14px 10px;
-    width: 200px;
+    width: 50px;
+    text-decoration: none;
 }
-.cierre[type="submit"]:hover,
-.cierre [type="submit"]:focus{
+.afuera a{
+    text-decoration: none;
+    color: white;
+}
+.afuera button[type="submit"]:hover,
+.afuera button[type="submit"]:focus{
     
     color: rgb(26, 24, 24);
     background: none;
     cursor: pointer;
+    
 }
-.cierre a{
-    line-height: 12px; 
-    width: 18px; 
-    font-size: 8pt; 
-    font-family: 'Poppins', sans-serif;
-    font-size: 16;
-    margin-top: 1px; 
-    margin-right: 2px; 
-    position:absolute; 
-    top:5px; 
-    right:80px;
+
+/*Para cambiar <OPTION>*/
+.contact-form option:hover
+{ 
+ background: rgba(38, 101, 153, 0.781); 
+ cursor: pointer;
+ border-radius: 10px; 
+ border: none;
+} 
+
+/*AQUI CONTACT-FORM que toma solo el registro*/
+.contact-form input[type="text"],
+.contact-form input[type="date"],
+.contact-form input[type="email"],
+.contact-form input[type="password"],
+.contact-form select{
+
+    border:0;
+    background: transparent;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
+    text-align: center;
+    border: 2px solid gray;
+    width: 200px;
+    outline: none;
+    color: rgb(32, 32, 32);
+    border-radius: 12px;
+    transition: 0.25s;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="date"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form input[type="password"]:focus{
+    width: 280px;
+    border-color: rgb(36, 84, 243);
+}
+
+.contact-form label{
+
+    border:0;
+    background: transparent;
+    display: block;
+    margin: 20px auto;
+    padding: 0;
+    text-align: left;
+    width: 200px;
+    outline: none;
+    color: rgb(32, 32, 32);
+
+
+
 }

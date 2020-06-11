@@ -55,10 +55,12 @@ body{
     background: rgb(3, 184, 197);
     cursor: pointer;
     border: 2px solid gray;
+    color:white;
 
 }
 .form-box button[type="submit"]:hover{
     background: none;
+    color:rgb(43, 43, 43);
 }
 .form-box .avatar{
     width: 100px;
@@ -83,16 +85,8 @@ body{
     top:5px; 
     right:80px;
 }
-.cierre {
-   
-    line-height: 12px; 
-    width: 18px; 
-    font-size: 8pt; 
-    font-family: 'Poppins', sans-serif; 
-    font-size: 16;
-    margin-top: 1px; 
-    margin-right: 2px; 
-    position:absolute; 
-    top:0px; 
-    right:20px;
+
+.form-box a{
+    text-decoration: none;
+    color: rgb(56, 56, 56);
 }

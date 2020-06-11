@@ -21,14 +21,20 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
         <link href='http://fonts.googleapis.com/css?family=Neucha' rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+
+
     </head>
+
     <body>
+        <div class="afuera">
          <!--AQUI ESTA EL BOTON DE CIERRE DE SESION QUE DEBE AVISAR A LA API QUE SE HA CERRADO SESION-->
-         <button type="submit" class="cierre">
+        <button type="submit" class="cierre">
             <a href="login.html">
             SALIR
             </a>
         </button>
+        </div>
+
         <h1>Orientador Vocacional</h1>
             <!---Esta clase content-form es para acomodar los grid en el css-->
             <div class="content-form">
@@ -36,58 +42,70 @@
                     <h3>Registrate</h3>
                         <form action="PHP/validarRegistro.php" method="POST" id="formulario">
                             <p>
-                                <label for="nombre">Nombre: </label>                    
-                                <input type="text" placeholder="Nombre(s)" name="nombre" id="nombre" autocomplete="off" required>
+                                <label id="nombre" for="nombre" class="name" > Nombre </label> 
+                                <input type="text" name="nombre" id="nombre" placeholder="Nombre" autocomplete="off" required>
+                                                 
                             </p>
                             <p>
-                                <label for="apellidop">Apellido paterno: </label>
-                                <input type="text" placeholder="Apellido Paterno" name="apellidoP" id="apellidoP" autocomplete="off" required>
+                                <label id="apellidop" for="apellido" class="apmaterno">Apellido paterno </label>
+                                <input type="text" name="apellido" id="apellido" placeholder="Apellido paterno" autocomplete="off" required>
+                                
+                                
                             </p>
                             <p>
-                                <label for="apellidom">Apellido materno: </label>
-                                <input type="text" placeholder="Apellido Materno" name="apellidoM" id="apellidoM" autocomplete="off" required>
+                                <label for="apellido" class="appaterno">Apellido materno </label>
+                                <input type="text" name="apellido" id="apellido" placeholder="Apellido materno" autocomplete="off" required>
+                                
+                                
                             </p>
                             <p>
-                                <label for="sexo">Sexo: </label>
-                                <select name="sexo" id="sexo"  placeholder="Sexo">
+                                <label for="pass" class="password">Contraseña</label> 
+                                <input type= "password" name="password" id="password" placeholder="Contraseña" required>
+                                                           
+                                
+                            </p>
+                            <p>
+                                <label for="sexo" class= "sexo">Sexo </label>  
+                                <select name="sexo" id="sexo">
                                     <option value="" selected disabled hidden>Sexo</option>
                                     <option value="h">Masculino</option> 
                                     <option value="m">Femenino</option> 
                                 </select>
                             </p>
-                            <p> 
-                                <label for="correo">Correo electronico: </label>                           
-                                <input type="email" placeholder="Correo electrónico" name="correo" id="correo" autocomplete="off" required>
-                            </p>
-                            <p>
-                                <label for="pass">Contraseña (maximo 8 digitos):</label>                            
-                                <input type="password" placeholder="Contraseña" name="pass" id="pass" required>
-                            </p>
-                            <p> 
-                                <label for="fecha">fecha de nacimiento: </label>                           
-                                <input type="date" name="fecha" id="fecha" autocomplete="off" required>
-                            </p>
-                            <p>
-                                <label for="estado">Estado: </label>
-                                <select name="estado" id="selectEstado"  type="combo" placeholder="Estado" onchange="getIDEstado(); return false;" required>
-                                <option value="" selected disabled hidden>Estado </option>
-                                <?php include 'PHP\consumir.php';
-                                iniciar("Estado"); ?>
-                                </select>
-                            </p>
-                            <p>
-                                <label for="municipio">Municipio: </label>
-                                <select name="municipio" id="selectMunicipio"  type="combo" placeholder="Municipio">
-                                <option value="" selected disabled hidden>Municipio </option>
-                                </select>
-                            </p>
-                            <p>
-                            <label for="colonia">Colonia: </label>
-                                <select name="colonia" id="selectColonia"  type="combo" placeholder="Colonia" >
-                                <option value="" selected disabled hidden>Colonia </option>
-                                </select>
-                                <!-- -->
-                            </p>
+                        <p> 
+                            <label for="correo" class= "email">Correo electronico: </label>  
+                            <input type="email"  name="correo" id="correo" autocomplete="off" placeholder="Correo electronico" required>
+                                                     
+                            
+                        </p>
+                        
+                        <p> 
+                            
+                            <label id="fecha" for="fecha" class="fecha" >Fecha de nacimiento</label>                          
+                            <input type="date" name="fecha" id="fecha" autocomplete="off" required>
+                            <!--<label for="fecha">fecha de nacimiento: </label>  -->
+                        </p>
+                        <p>
+                            <label>Estado</label>
+                            <select name="estado" id="selectEstado"  type="combo" onchange="getIDEstado()" required>
+		                    <option value="" selected disabled hidden>Estado </option>
+                            <?php include 'PHP\consumir.php';
+                            iniciar("Estado"); ?>
+                            </select>
+                        </p>
+                        <p>
+                            <label>Municipio</label>
+                            <select name="municipio" id="selectMunicipio"  type="combo">
+                            <option value="" selected disabled hidden>Municipio </option>
+                            </select>
+                        </p>
+                        <p>
+                            <label>Colonia</label>
+                            <select name="colonia" id="selectColonia"  type="combo" >
+                            <option value="" selected disabled hidden>Colonia </option>
+                            </select>
+                            <!-- -->
+                        </p>
                         <p class="bloque" onclick = "return validarFormulario();">
                             <button type="submit">
                                 Aceptar
