@@ -2,17 +2,19 @@ function getIDMunicipio(){
     var idEstado = $("#selectEstado").val();
     var direccion = "https://localhost:44373/Municipio/" + idEstado;
     var datos = {direccion : direccion};
-    
+    console.log(direccion);
     $.ajax({
         type: "POST",
         url: "PHP/conexion.php",
         data: datos,
         beforeSend: function(objeto){
             console.log("Espere procesando...");
+            console.log(datos);
         },
         success: function(data){    
-            $("#divMun").html(data);
-            console.log("entro!!");
+            $.get("PHP/conexion.php", function(datos){
+                   $("#juan").html(datos);
+            });
         }
     })
 }

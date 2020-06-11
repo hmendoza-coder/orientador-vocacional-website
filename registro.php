@@ -69,7 +69,7 @@
                             </p>
                             <p>
                                 <label for="estado">Estado: </label>
-                                <select name="estado" id="selectEstado"  type="combo" placeholder="Estado" onchange="getIDMunicipio(); return false;" required>
+                                <select name="estado" id="selectEstado"  type="combo" placeholder="Estado" onchange="getIDEstado(); return false;" required>
                                 <option value="" selected disabled hidden>Estado </option>
                                 <?php include 'PHP\consumir.php';
                                 iniciar("Estado"); ?>

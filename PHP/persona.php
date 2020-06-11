@@ -1,15 +1,15 @@
 <?php
     class Persona{
-        private $nombre;
-        private $apellidoP;
-        private $apellidoM;
-        private $correo;
-        private $pass;
-        private $sexo;
-        private $fechaNacimiento;
-        private $idEstado;
-        private $idMunicipio;
-        private $idColonia;
+        public $nombre;
+        public $apellidoP;
+        public $apellidoM;
+        public $correo;
+        public $pass;
+        public $sexo;
+        public $fechaNacimiento;
+        public $idEstado;
+        public $idMunicipio;
+        public $idColonia;
 
         public function setNombre($string){
             $this->nombre = $string;

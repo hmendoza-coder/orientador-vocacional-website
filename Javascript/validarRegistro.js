@@ -118,19 +118,6 @@ function validarFormulario(){
 		return true;
 	}
 
-	function campoVacio(campo){
-		Swal.fire({
-			title: campo +' es un campo obligatorio.',
-			text: 'Este campo es obligatorio por lo que no debe ir vacio o solo con espacios.',
-			icon: 'warning',
-			backdrop: true,
-			allowOutsideClick: true,
-			allowEscapeKey: true,
-			allowEnterKey: true,
-		})
-		return false;
-	}
-
 	function validarEmail(valor) {
 		if( !(/^\w+([\.-]?\w+)*@(?:|hotmail|outlook|yahoo|live|gmail)\.(?:|com|es)+$/.test(valor)) ) {
 			Swal.fire(
@@ -140,18 +127,24 @@ function validarFormulario(){
 			)
 			return false;
 		}
+		else{
+			return true;
+		}
 	  }
 
 	function calcularEdad(fechaNacimiento){
 		var fechaNacim = new Date(fechaNacimiento);
 		var fechaActual = new Date();
 		var edad = fechaActual.getFullYear() - fechaNacim.getFullYear();
-		if(edad < 12 || edad > 100){
+		if(edad < 9 || edad > 100){
 			Swal.fire(
 				'Fecha de nacimiento incorrecta.',
 				'La fecha de nacimiento ingresada es incorrecta verificalo',
 				'question'
 			)
 			return false
+		}
+		else{
+			return true;
 		}
 	}

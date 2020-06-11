@@ -1,4 +1,5 @@
-<?php include "persona.php"?>
+<?php include "persona.php";
+include "Cliente.php";?>
 <!DOCTYPE html>
 <html lang="es"> 
 <head>
@@ -28,7 +29,6 @@
     $pass = limpiarVariable($_POST['pass']);
     $fecha = date('Y-m-d', strtotime($_POST['fecha']));
     $estado = $_POST['estado'];
-
     // Creacion del objeto persona
     $persona = new Persona();
     $persona->setNombre($nombre);
@@ -41,6 +41,18 @@
     $persona->setidEstado($estado);
     $persona->setidMunicipio($estado);
     $persona->setidColonia($estado);
+
+    $json = json_encode($persona, true);
+    $url = 'https://localhost:44373/Persona';
+
+    $response = callAPI("POST",$url,$json);
+    if($response)
+    {
+        if($response->status)
+        {
+            echo "Correcto?";
+        }   
+    }
 
     // Funcion que "limpia" las variables.
     function limpiarVariable($varSucia){
