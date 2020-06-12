@@ -34,6 +34,7 @@
         {
             $id_sesesion = $response->datos->idSesion;
             echo $id_sesesion;
+            header("Location: ../test.html");
         }   
     }
     else
