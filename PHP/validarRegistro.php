@@ -46,7 +46,6 @@ include "Cliente.php";?>
 
     $json = json_encode($persona);
     $url = 'http://localhost:52899/Persona';
-    echo $json;
     $response = callAPI("POST",$url,$json);
     if($response)
     {
