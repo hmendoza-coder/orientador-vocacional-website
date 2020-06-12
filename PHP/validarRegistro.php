@@ -57,10 +57,11 @@ include "../Cliente.php";?>
 				text: 'Tu informacion se ha registrado, ya puedes iniciar sesión.',
                 icon: 'success'
            }).then(function() {
-                window.location = "../index.php";
+                window.location = "../login.html"; //cambiar si se mueve el log
             });
        </script>
        <?php
+       
     }
     else
     {

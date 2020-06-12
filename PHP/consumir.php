@@ -1,6 +1,5 @@
 <?php
-	// Inicia la sesion
-	session_start();
+	include "pregunta.php";
 ?>
 <!DOCTYPE html>
 <html lang="es"> 
@@ -88,6 +87,56 @@
 		foreach ($datos as $value) {
 			?><option value="<?php echo $value[$variable]?>"><?php echo $value['nombre']?></option><?php
 		}
+	}
+	function callPersonas($correo){
+		$url = "http://localhost:52899/Persona";
+		$arrContextOptions=array(
+			"ssl"=>array(
+				"verify_peer"=>false,
+				"verify_peer_name"=>false,
+			),
+		);  
+		// Aqui deberia recibir una $ruta y concatenarse con la url para poder crear una direccion nueva.
+		$json = file_get_contents($url, false, stream_context_create($arrContextOptions));
+		$datos = json_decode($json, true);
+		$contador = 0;
+		foreach($datos as $valor){
+			// Agarrar solo los datos.
+			if($contador == 2){
+				$array = $valor;
+			}
+			$contador++;
+		}
+		foreach($array as $value){
+			if(!strcmp($value['correo'],$_SESSION['correo'])){
+				return $value['nombres'];
+			}
+		}
+	}
+	function callPreguntas($idSesion){
+		$pregunta = new Pregunta();
+		$url = "http://localhost:52899/Pregunta?idSesion=".$idSesion;
+		$arrContextOptions=array(
+			"ssl"=>array(
+				"verify_peer"=>false,
+				"verify_peer_name"=>false,
+			),
+		);  
+		// Aqui deberia recibir una $ruta y concatenarse con la url para poder crear una direccion nueva.
+		$json = file_get_contents($url, false, stream_context_create($arrContextOptions));
+		$datos = json_decode($json, true);
+		$contador = 0;
+		foreach($datos as $valor){
+			// Agarrar solo los datos.
+			if($contador == 2){
+				$array = $valor;
+				$pregunta->setidPregunta($array['idPregunta']);
+				$pregunta->setContenido($array['contenido']);
+				return $array['contenido'];
+			}
+			$contador++;
+		}
+		
 	}
 	?> 
 	<script src="Javascript/selectMunicipio.js"></script>

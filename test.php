@@ -1,6 +1,6 @@
 <?php
+    include "PHP/consumir.php";
     include "Cliente.php";
-    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -25,15 +25,14 @@
         <div class="afuera">
             <!--AQUI ESTA EL BOTON DE CIERRE DE SESION QUE DEBE AVISAR A LA API QUE SE HA CERRADO SESION-->
            <button type="submit" class="cierre">
-               <a href="login.html">
+               <a href="PHP/cerrarSesion.php">
                SALIR
                </a>
            </button>
-        </div>      
-
+        </div>  
         <h1>Orientador Vocacional</h1>              
         <h2>Test vocacional </h2>
-        <label>¡Bienvenido a nuestro orientador vocacional!</label>
+        <label>¡Bienvenido <b><?php echo $_SESSION['nombres']; ?></b> a nuestro orientador vocacional!</label>
 
         <div class ="box-test">
 
@@ -43,12 +42,12 @@
                 <form action="validarTest.php" method="POST" class="form-test">
                     <!--Prueba para vista de preguntas-->
                     <!--el numero de pregunta debera ser un contador ascendente-->
-                    <label>1. Conocer varios métodos para resolver problemas matemáticos.</label>
+                    <label><?php echo $contenido = callPreguntas($_SESSION['idSesion']);?></label>
                     <ul>
                         <li><input type="radio" id="radioB" name="preg1" value="1" /> Mucho</li>
                         <li><input type="radio" id="radioB" name="preg1" value="2" /> Poco</li>
                         <li><input type="radio" id="radioB" name="preg1" value="3" /> Nada</li>
-                        <li><input type="hidden" id="pregunta" name="pregunta"></li>
+                        <input type="hidden" id="pregunta" name="pregunta" valur="<?php echo $contenido->getidPregunta(); ?>">
                     </ul>
                     <!--BOTON PARA ENVIAR RESPUESTA A LA API-->
                     <p class="boton" onclick = "return validarRespuesta();">

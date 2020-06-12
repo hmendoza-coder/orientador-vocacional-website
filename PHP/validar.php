@@ -1,5 +1,6 @@
 <?php include "persona.php"?>
 <?php include "../cliente.php"?>
+<?php include "consumir.php"?>
 <!DOCTYPE html>
 <html lang="es"> 
     <head>
@@ -9,9 +10,9 @@
         <title>Orientador vocacional</title>
         <!--Scripts-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <!--Estilos-->
-        <link rel="stylesheet" href="estiloRegistro.css">
+        <link rel="stylesheet" href="estiloslogin.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 	    <!--Titulos-->
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
@@ -33,16 +34,27 @@
         if($response->status)
         {
             $id_sesesion = $response->datos->idSesion;
-            echo $id_sesesion;
-            header("Location: ../test.html");
+            $_SESSION['correo'] = limpiarVariable($_POST["correo"]);
+            $_SESSION['pass'] = limpiarVariable($_POST["pass"]);
+            $_SESSION['idSesion'] = $id_sesesion;
+            $_SESSION['nombres'] = callPersonas($_SESSION['correo']);
+            // en teoria abria que cargar el nombre del usuario en una variable de sesion...
+            header("Location: ../test.php");
         }   
     }
     else
     {
-        echo "<script>
-            alert('El correo y la contraseña introducidos no son correctos.');
-            window.location.href='../login.html';
-            </script>";
+        ?>
+        <script type="text/javascript">
+           Swal.fire({
+                title: 'Usuario no identificado.',
+				text: 'El correo y la contraseña introducidos no son correctos.',
+                icon: 'error'
+           }).then(function() {
+                window.location = "../login.html"; //cambiar si se mueve el log
+            });
+       </script>
+        <?php
     }
 
     function limpiarVariable($varSucia){
