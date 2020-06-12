@@ -41,6 +41,5 @@ include "Cliente.php";?>
     
    
 ?>
-<script src="Javascript/sweetAlert.js"></script>
 </body>
 </html>

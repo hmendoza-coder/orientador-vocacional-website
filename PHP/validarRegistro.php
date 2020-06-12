@@ -1,5 +1,5 @@
 <?php include "persona.php";
-include "Cliente.php";?>
+include "../Cliente.php";?>
 <!DOCTYPE html>
 <html lang="es"> 
     <head>
@@ -9,6 +9,7 @@ include "Cliente.php";?>
         <title>Orientador vocacional</title>
         <!--Scripts-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <!--Estilos-->
         <link rel="stylesheet" href="estiloRegistro.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
@@ -49,11 +50,31 @@ include "Cliente.php";?>
     $response = callAPI("POST",$url,$json);
     if($response)
     {
-        echo $response;
+       ?>
+       <script type="text/javascript">
+           Swal.fire({
+               title: 'Registro exitoso.',
+				text: 'Tu informacion se ha registrado, ya puedes iniciar sesión.',
+                icon: 'success'
+           }).then(function() {
+                window.location = "../index.php";
+            });
+       </script>
+       <?php
     }
     else
     {
-        echo "Ocurrio un error: ";
+        ?>
+        <script type="text/javascript">
+           Swal.fire({
+               title: 'Ocurrio un error.',
+				text: 'El proceso fue interrumpido, puede intentarlo mas tarde.',
+                icon: 'error'
+           }).then(function() {
+                window.location = "registro.php";
+            });
+       </script>
+       <?php
     }
     
 
