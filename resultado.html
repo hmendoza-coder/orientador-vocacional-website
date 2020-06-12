@@ -3,8 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Orientador vocacional</title>
+    <link rel="stylesheet" href="estiloResultado.css">
+	    <!--Fuentes-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital@1&family=Open+Sans&display=swap" rel="stylesheet">
+	<!--Para los textos-->
+	<link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="afuera">
+        <!--AQUI ESTA EL BOTON DE CIERRE DE SESION QUE DEBE AVISAR A LA API QUE SE HA CERRADO SESION-->
+       <button type="submit" class="cierre">
+           <a href="login.html">
+           SALIR
+           </a>
+       </button>
+    </div>
+    <h2>¡Estos son tus resultados!</h2>
+    <form action="" class="box-res">
+        <label>
+            Los resultados del test vocacional indican que eres un excelente candidato para desarrollarte como:
+
+        </label>
+        <!--Para el grafico de barras-->
+        <div id="vertgraph" class="form-graphic">
+            <ul>
+            <li class="critical" style="height: 150px;">80%</li>
+            <li class="high" style="height: 80px;">12%</li>
+            <li class="medium" style="height: 50px;">8%</li>
+            </ul>
+        </div>
+        <label>
+            Ahora puedes tomar una desición 
+            <a href="test.html">
+                o realizar nuevamente el test dando click aqui mismo
+            </a>
+        </label>
+    </form>
     
 </body>
 </html>

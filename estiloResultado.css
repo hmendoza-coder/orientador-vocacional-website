@@ -1,0 +1,101 @@
+body,html{
+    height: 100%;
+}
+
+body{
+    margin:0;
+    background-image: url("imagenes/blu.jpg");
+    background-size: cover;
+    background-position : center center;
+    background-attachment: fixed;
+    padding: 0;
+    height: 100vh;
+    font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+    display: block;
+    flex-direction: row;
+    flex-wrap: wrap;
+	color: rgb(34, 34, 34);
+}
+h2{
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 36px;
+}
+label{
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	margin: 40px 20px;
+	text-align: left;
+}
+/*Para el grafico de barras*/
+#vertgraph {
+    width: 378px;
+    height: 207px;
+    position: relative;
+    border:rgba(255, 255, 255, 0.452);
+    background: rgba(0, 0, 255, 0.171);
+    }
+    #vertgraph ul {
+    width: 478px;
+    height: 307px;
+    margin: 0;
+    padding: 0;
+    }
+    #vertgraph ul li {
+    position: absolute;
+    width: 28px;
+    height: 160px;
+    bottom: 34px;
+    padding: 20px !important;
+    margin: 5px !important;
+    background: rgb(48, 131, 255) !important;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    line-height: 2.5em;
+    }
+    #vertgraph li.critical { left: 101px; background-position: 0px bottom !important; }
+    #vertgraph li.high { left: 176px; background-position: -28px bottom !important; }
+    #vertgraph li.medium { left: 260px; background-position: -56px bottom !important; }
+/*Para encerrar la grafica*/
+
+/*DISEÑO DEL BOTON DE CIERRE*/
+.afuera button[type="submit"]{
+   
+    line-height: 12px; 
+    width: 18px; 
+    font-size: 8pt; 
+    font-family: 'Poppins', sans-serif; 
+    
+    margin-top: 1px; 
+    margin-right: 2px; 
+    position:absolute;
+
+    top:9px; 
+    right:80px;
+    display: block;
+    margin:20px auto;
+    font-size: 12px;
+	
+    border:0;
+    background: rgb(3, 184, 197);
+    border: 2px solid rgba(128, 128, 128, 0.384);
+    text-transform: uppercase;
+    border-radius: 10px;
+    padding: 14px 10px;
+    width: 50px;
+    text-decoration: none;
+}
+.afuera a{
+    text-decoration: none;
+    color: white;
+}
+.afuera button[type="submit"]:hover,
+.afuera button[type="submit"]:focus{
+    
+    color: rgb(26, 24, 24);
+    background: none;
+    cursor: pointer;
+    
+}
