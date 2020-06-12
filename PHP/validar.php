@@ -34,11 +34,15 @@
         {
             $id_sesesion = $response->datos->idSesion;
             echo $id_sesesion;
+            header("Location: ../test.html");
         }   
     }
     else
     {
-        echo "Ocurrio un error: ";
+        echo "<script>
+            alert('El correo y la contraseña introducidos no son correctos.');
+            window.location.href='../login.html';
+            </script>";
     }
 
     function limpiarVariable($varSucia){
