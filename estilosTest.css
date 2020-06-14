@@ -93,9 +93,6 @@ label{
 	padding: 8px;
 }
 
-tr:nth-child(even){
-	background: gray;
-}
 /*BOTON ENVIAR*/
 .form-test button[type="submit"]{
     font-size: 12px;

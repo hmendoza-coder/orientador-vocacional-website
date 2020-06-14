@@ -1,0 +1,115 @@
+html,body{
+    height: 100%;
+}
+body{
+	margin:0;
+    background-image: url("imagenes/blu.jpg");
+    /*background: black;*/
+    background-size: cover;
+    background-position : center center;
+    background-attachment: fixed;
+    padding: 0;
+    height: 100vh;
+    font-size: 18px;
+    font-family: 'Bitter', serif;
+    display: block;
+    flex-direction: row;
+    flex-wrap: wrap;
+	color: rgb(34, 34, 34);
+
+}
+
+h1{
+	font-family: 'Noto Sans', sans-serif ;
+	font-size: 50px;
+	font-weight: bold;
+	color: rgb(24, 23, 23);
+	text-align: left;
+    border: 5px;
+    padding: 25px;
+    margin: auto 20px;
+    background: rgba(46, 111, 252, 0.158);
+    background-position: left;
+}
+.form_archivo p{
+    text-align: center;
+}
+label{
+	font-size: 18px;
+    margin: 40px 20px;
+    display: block;
+	text-align: center;
+}
+
+/*TABLA*/
+table{
+	border-collapse: collapse;
+    width: 42%;
+    
+    align-self: center;
+	justify-self: center;
+}
+
+th,td{
+    
+	text-align: left;
+    padding: 15px;
+    background: rgba(55, 42, 231, 0.164);
+    
+}
+
+.box-table{
+	display: grid;
+    grid-template-columns: 1fr;
+	position: relative;
+
+	width: 700px;
+	padding: 90px 70px;
+	left: 300px;
+	right: 100px;
+    background: #ebeaea34;
+	text-align: center;
+	
+	align-self: center;
+	justify-self: center;
+}
+
+/*DISEÑO DEL BOTON DE CIERRE*/
+button[type="submit"]{
+   
+    line-height: 12px; 
+    width: 18px; 
+    font-size: 8pt; 
+    font-family: 'Poppins', sans-serif; 
+    
+    margin-top: 1px; 
+    margin-right: 2px; 
+    position:absolute;
+
+    top:9px; 
+    right:80px;
+    display: block;
+    margin:20px auto;
+    font-size: 12px;
+	
+    border:0;
+    background: rgb(3, 184, 197);
+    border: 2px solid gray;
+    text-transform: uppercase;
+    border-radius: 10px;
+    padding: 14px 10px;
+    width: 55px;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+button[type="submit"]:hover,
+button[type="submit"]:focus{
+    
+    color: rgb(26, 24, 24);
+    background: none;
+    cursor: pointer;
+    
+}
