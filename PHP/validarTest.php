@@ -24,15 +24,13 @@
     // Todas las variables que se reciben del formulario.
     if(!isset($_POST["radioB"])){
             $arreglo = array(
-                "idPregunta" =>$_POST['pregunta'],
+                "idPregunta" =>(int)$_POST['pregunta'],
                 "idSesion" => $_SESSION['idSesion'],
-                "idOpcion" => $_POST["preg1"]
+                "idOpcion" => (int)$_POST["preg1"]
             );
             $json = json_encode($arreglo);
 
-            echo "ID PREGUNTA: ".$arreglo['idPregunta'];
-            echo "ID SESION: ".$arreglo['idSesion'];
-            echo "ID OPCION: ".$arreglo['idOpcion'];
+            print_r($json);
 
             $url = 'http://localhost:52899/Respuesta';
             $response = callAPI("POST", $url, $json);
