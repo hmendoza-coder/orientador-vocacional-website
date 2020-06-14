@@ -1,5 +1,6 @@
-<?php include "persona.php";
-include "Cliente.php";?>
+<?php   include "persona.php";
+        include "../Cliente.php"    
+?>
 <!DOCTYPE html>
 <html lang="es"> 
     <head>
@@ -9,6 +10,7 @@ include "Cliente.php";?>
         <title>Orientador vocacional</title>
         <!--Scripts-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <!--Estilos-->
         <link rel="stylesheet" href="estiloRegistro.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
@@ -20,26 +22,40 @@ include "Cliente.php";?>
 <body>
 <?php
     // Todas las variables que se reciben del formulario.
-    isset($_POST["Opcion"]){
-        $opcion = $_POST["preg1"];
+    if(!isset($_POST["radioB"])){
+            $arreglo = array(
+                "idPregunta" =>$_POST['pregunta'],
+                "idSesion" => $_SESSION['idSesion'],
+                "idOpcion" => $_POST["preg1"]
+            );
+            $json = json_encode($arreglo);
+
+            echo "ID PREGUNTA: ".$arreglo['idPregunta'];
+            echo "ID SESION: ".$arreglo['idSesion'];
+            echo "ID OPCION: ".$arreglo['idOpcion'];
+
+            $url = 'http://localhost:52899/Respuesta';
+            $response = callAPI("POST", $url, $json);
+            if($response){
+                ?>
+                <script type="text/javascript">
+                    Swal.fire({
+                        title: 'Registro exitoso.',
+                         text: 'Tu informacion se ha registrado, ya puedes iniciar sesión.',
+                         icon: 'success'
+                    }).then(function() {
+                         //window.location = "../test.php"; //cambiar si se mueve el log
+                     });
+                </script>
+                <?php
+            }
+            else{
+                echo "error";
+            }
     }
-    isset($_POST["idSesion"]){
-        $sesion = $_POST["idSesion"];
-    }
-    echo "La opcion respondida es".$opcion;
-    $url = 'http://localhost:52899/Persona';
-    echo $json;
-    $response = callAPI("POST",$url,$json);
-    if($response)
-    {
-        echo $response;
-    }
-    else
-    {
-        echo "Ocurrio un error: ";
-    }
+
     
-   
+    
 ?>
 </body>
 </html>

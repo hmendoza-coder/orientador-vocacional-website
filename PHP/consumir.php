@@ -132,7 +132,7 @@
 				$array = $valor;
 				$pregunta->setidPregunta($array['idPregunta']);
 				$pregunta->setContenido($array['contenido']);
-				return $array['contenido'];
+				return $pregunta;
 			}
 			$contador++;
 		}

@@ -39,15 +39,15 @@
                 <p class = "instruccion">
                     Se sincero al responder pues de esto depende que el resultado sea el mas acertado.
                 </p>
-                <form action="validarTest.php" method="POST" class="form-test">
+                <form action="PHP/validarTest.php" method="POST" class="form-test">
                     <!--Prueba para vista de preguntas-->
                     <!--el numero de pregunta debera ser un contador ascendente-->
-                    <label><?php echo $contenido = callPreguntas($_SESSION['idSesion']);?></label>
+                    <label><?php $contenido = callPreguntas($_SESSION['idSesion']); echo $contenido->getContenido()?></label>
                     <ul>
                         <li><input type="radio" id="radioB" name="preg1" value="1" /> Mucho</li>
                         <li><input type="radio" id="radioB" name="preg1" value="2" /> Poco</li>
                         <li><input type="radio" id="radioB" name="preg1" value="3" /> Nada</li>
-                        <input type="hidden" id="pregunta" name="pregunta" valur="<?php echo $contenido->getidPregunta(); ?>">
+                        <input type="hidden" id="pregunta" name="pregunta" value="<?php echo $contenido->getidPregunta(); ?>">
                     </ul>
                     <!--BOTON PARA ENVIAR RESPUESTA A LA API-->
                     <p class="boton" onclick = "return validarRespuesta();">
