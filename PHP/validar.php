@@ -3,16 +3,15 @@
 <?php include "consumir.php"?>
 <!DOCTYPE html>
 <html lang="es"> 
-    <head>
+<head>
         <meta charset="UTF-8">
         <!--<meta name= "viewport" content="width=device-width, initial-scale-1.0">       esta cosa da error en consola-->
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Orientador vocacional</title>
         <!--Scripts-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <!--Estilos-->
-        <link rel="stylesheet" href="estiloslogin.css">
+        <link rel="stylesheet" href="../estiloslogin.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 	    <!--Titulos-->
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
@@ -71,5 +70,25 @@
           
    
 ?>
+    
+    <form action="PHP/validar.php" class="form-box" method="POST">
+        
+        <!--hola que hacen?-->
+        <img class="avatar" src="imagenes/birrete.jpg" alt="logo del orientador">
+        <h1 class="form-title">Sign In</h1>
+        <input type ="text" placeholder="Correo electrónico" id="correo" name = "correo" autocomplete="off" required>
+        <input type="password" placeholder="Contraseña" id="pass" name = "pass" autocomplete="off" required>
+            <button type="submit" onclick="return validarSesion();">
+                  
+                Iniciar sesión
+                
+            </button>
+        <!--AQUI ESTA EL ENLACE PARA LA PAGINA DE REGISTRO-->
+        <footer>
+            <!--<a href="#">¿Olvidaste tu contraseña?</a>-->
+            <u><a href="registro.php">¿Eres nuevo? Registrate aqui</a></u>
+        </footer>
+    </form>
+
 </body>
 </html>

@@ -24,10 +24,10 @@
     <body>
         <div class="afuera">
             <!--AQUI ESTA EL BOTON DE CIERRE DE SESION QUE DEBE AVISAR A LA API QUE SE HA CERRADO SESION-->
-           <button type="submit" class="cierre">
+           <button type="submit" class="cierre" onclick =" return alertaSalida();">
                <a href="PHP/cerrarSesion.php">
                SALIR
-               </a>
+               </a>  
            </button>
         </div>  
         <h1>Orientador Vocacional</h1>              

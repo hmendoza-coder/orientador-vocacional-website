@@ -23,6 +23,20 @@
 <?php
     // Todas las variables que se reciben del formulario.
     if(!isset($_POST["radioB"])){
+
+        if($_POST['pregunta'] == '0'){
+            ?>
+            <script>
+                Swal.fire(
+                    'Finaliza el cuestionario.',
+                    'A contnuacion serás reedirigido a los resultados.',
+                    'success'
+                )
+                window.location = "../login.html";  // redireccionar
+            </script>
+            <?php
+        }
+        else{
             $arreglo = array(
                 "idPregunta" =>(int)$_POST['pregunta'],
                 "idSesion" => $_SESSION['idSesion'],
@@ -68,6 +82,10 @@
                 </script>
                 <?php
             }
+        }
+
+
+            
             
     }
 

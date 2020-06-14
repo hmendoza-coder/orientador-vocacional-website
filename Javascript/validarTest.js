@@ -18,3 +18,22 @@ function validarRespuesta(){
     }
     return true;
 }
+
+
+function alertaSalida(){
+    Swal.fire({
+        title: 'Quieres salir del cuestionario?',
+        text: "Una vez fuera tendras que volver a iniciar sesión para entrar.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Salir'
+      }).then((result) => {
+        if (result.value) {
+            location.href ="http://localhost/orientador-vocacional-website/login.html"; // cambiar la redireccion si se mueve la ruta
+            return true;
+        }
+      })
+      return false;
+}
