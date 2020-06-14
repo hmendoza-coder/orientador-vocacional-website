@@ -11,7 +11,7 @@ function validarSesion(){
         return false;
     }
     else{
-        //validarEmail(txtCorreo);  pero parece que hay algo mal con la validacion
+        validarEmail(txtCorreo);
     }
     if(txtPass == null || txtPass.length == 0 || /^\s+$/.test(txtPass)){
         Swal.fire(
@@ -24,4 +24,15 @@ function validarSesion(){
 
     return true;
 }
+
+function validarEmail(valor) {
+    if( !(/^\w+([\.-]?\w+)*@(?:|hotmail|outlook|yahoo|live|gmail)\.(?:|com|es)+$/.test(valor)) ) {
+        Swal.fire(
+            'El correo ingresado no es valido.',
+            'El correo no cuenta con la estructura correcta nombre usuario + @ + servidor + dominio',
+            'error'
+        )
+        return false;
+    }
+  }
 

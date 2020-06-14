@@ -30,7 +30,7 @@
          <!--AQUI ESTA EL BOTON DE CIERRE DE SESION QUE DEBE AVISAR A LA API QUE SE HA CERRADO SESION-->
         <button type="submit" class="cierre">
             <a href="login.html">
-            SALIR
+            Volver al inicio
             </a>
         </button>
         </div>
