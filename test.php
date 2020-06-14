@@ -45,8 +45,8 @@
                     <label><?php $contenido = callPreguntas($_SESSION['idSesion']); echo $contenido->getContenido()?></label>
                     <ul>
                         <li><input type="radio" id="radioB" name="preg1" value="1" /> Mucho</li>
-                        <li><input type="radio" id="radioB" name="preg1" value="2" /> Poco</li>
-                        <li><input type="radio" id="radioB" name="preg1" value="3" /> Nada</li>
+                        <li><input type="radio" id="radioB" name="preg1" value="3" /> Poco</li>
+                        <li><input type="radio" id="radioB" name="preg1" value="2" /> Nada</li>
                         <input type="hidden" id="pregunta" name="pregunta" value="<?php echo $contenido->getidPregunta(); ?>">
                     </ul>
                     <!--BOTON PARA ENVIAR RESPUESTA A LA API-->
