@@ -19,6 +19,8 @@ body{
     padding: 40px;
     background: #ebeaea34;
     text-align: center;
+    justify-content: center;
+    align-items: center;
 
 }
 .form-title{
