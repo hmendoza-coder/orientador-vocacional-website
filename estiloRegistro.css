@@ -73,71 +73,22 @@ h3{
 }
 /*AQUI PARA REPARTIR EL ESPACIO A CADA BLOQUE*/
 .content-form{
+ /*   display: grid;
+    grid-template-columns: 85% 5%;
+    font-family: 'Poppins', sans-serif;*/
     display: grid;
-    grid-template-columns: 75% 25%;
-    font-family: 'Poppins', sans-serif;
-}
+    grid-template-columns: 1fr;
+	position: relative;
 
-/*AQUI INICIA CONTACT-INFO*/
-.contact-info{
-    background: rgba(8, 145, 209, 0.363);
-    
-}
-
-.contact-info h3,
-.contact-info ul,
-.contact-info p{
-    margin:0 0 1rem 0;
-    padding: 1em;
-}
-.contact-info p{
-    text-align: left;
-}
-.contact-info ul{
-    list-style: none;
-}
-.contact-info ul li{
-    text-align: left;
-}
-.contact-info textarea{
-    border-radius: 10px;
-    border: 0;
-    background: none;
-    text-align: left;
-    border: 2px solid gray;
-    width: 200px;
-    outline: none;
-    color: rgb(19, 18, 18);
-    transition: 0.25s;
-    font-family: 'Poppins', sans-serif;
-    padding: 14px 10px;
-    display: block;
-    
-}
-
-.contact-info button[type="submit"]{
-    font-size: 12px;
-	font-family: 'Bree Serif', ;
-    color: white;
-    border:0;
-    background: rgb(3, 184, 197);
-   
-    border: 2px solid gray;    
-    border-radius: 10px;
-    width: 200px;
-    padding: 14px 10px;
-    display: block;
-    margin: 20px auto;
-    outline: none;
-    transition: 0.25s;
-}
-
-.contact-info button[type="submit"]:hover,
-.contact-info button[type="submit"]:focus{
-    
-    color: rgb(26, 24, 24);
-    background: none;
-    cursor: pointer;
+	width: 700px;
+	padding: 50px 70px;
+	left: 0px;
+	right: 100px;
+    background: #ebeaea34;
+	text-align: center;
+	
+	align-self: center;
+	justify-self: center;
 }
 
 /*DISEÑO DEL BOTON DE CIERRE*/
@@ -151,20 +102,18 @@ h3{
     margin-top: 1px; 
     margin-right: 2px; 
     position:absolute;
-
     top:12px; 
     right:80px;
     display: block;
-    margin:20px auto;
+    margin:30px auto;
     font-size: 12px;
-	
     border:0;
     background: rgb(3, 184, 197);
     border: 2px solid gray;
     text-transform: uppercase;
     border-radius: 10px;
     padding: 14px 10px;
-    width: 50px;
+    width: 70px;
     text-decoration: none;
 }
 .afuera a{
@@ -219,7 +168,6 @@ h3{
 }
 
 .contact-form label{
-
     border:0;
     background: transparent;
     display: block;
@@ -229,7 +177,4 @@ h3{
     width: 200px;
     outline: none;
     color: rgb(32, 32, 32);
-
-
-
 }
