@@ -138,6 +138,27 @@
 		}
 		
 	}
+	function callRespuestas($idSesion){
+		$url = "http://localhost:52899/Resultado?idSesion=".$idSesion;
+		$arrContextOptions=array(
+			"ssl"=>array(
+				"verify_peer"=>false,
+				"verify_peer_name"=>false,
+			),
+		);  
+		// Aqui deberia recibir una $ruta y concatenarse con la url para poder crear una direccion nueva.
+		$json = file_get_contents($url, false, stream_context_create($arrContextOptions));
+		$datos = json_decode($json, true);
+		$contador = 0;
+		foreach($datos as $valor){
+			// Agarrar solo los datos.
+			if($contador == 2){
+				$array = $valor;
+				return $array;
+			}
+			$contador++;
+		}
+	}
 	?> 
 	<script src="Javascript/selectMunicipio.js"></script>
 </body>

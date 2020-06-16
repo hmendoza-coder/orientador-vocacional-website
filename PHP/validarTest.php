@@ -31,8 +31,9 @@
                     'Finaliza el cuestionario.',
                     'A contnuacion serás reedirigido a los resultados.',
                     'success'
-                )
-                window.location = "../login.html";  // redireccionar
+                ).then(function() {
+                    window.location = "../resultado.php";  // redireccionar
+                });
             </script>
             <?php
         }
