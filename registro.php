@@ -113,28 +113,6 @@
                     </form>
                 </div>
                 
-                <!--Este apartado es para info sobre el equipo y posibilidad de contacto con el usuario para dudas dudosas-->
-                <div class="contact-info">
-                    <h3>Más información y contacto</h3>
-                    <ul>
-                        <li>Desarrollo web Estación Friki</li>
-                        <li>ruwberr@gmail.com</li>
-                    </ul>
-                    
-                    <p class="mensaje">
-                        <textarea placeholder="Asunto" name="asunto" rows="3"></textarea>
-                    </p>
-                    <p class="boton_mensaje">
-                        <button type="submit">
-                            Enviar
-                        </button>
-                    </p>
-                    
-                    <!--Esta p es para un mensaje de confianza al usuario sobre su info-->
-                    <p>La información recibida aqui, no será compartida ni usada
-                        por terceros.
-                    </p>
-                </div>
             </div>
     <script src="Javascript/selectMunicipio.js"></script>
     <script src="Javascript/validarRegistro.js"></script>
