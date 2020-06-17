@@ -14,7 +14,7 @@
 <body>
     <form class="form-archivo">
         <button type="submit" class="cierre">
-            <a href="login.html">
+            <a href="index.php">
             SALIR
             </a>
         </button>

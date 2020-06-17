@@ -38,7 +38,7 @@
             $_SESSION['idSesion'] = $id_sesesion;
             $_SESSION['nombres'] = callPersonas($_SESSION['correo']);
             // en teoria abria que cargar el nombre del usuario en una variable de sesion...
-            header("Location: ../test.php");
+            header("Location: ../index.php");
         }   
     }
     else

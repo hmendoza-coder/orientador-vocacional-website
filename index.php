@@ -32,7 +32,7 @@
             <a href="index.php" class="active" >Inicio</a>
             <?php
 				if(isset($_SESSION['idSesion'])){?>
-                <a href="resultado.php" onclick="return validarConexion();">Mostrar resultados</a><?php
+                <a href="archivo_respuesta.php" onclick="return validarConexion();">Mostrar resultados</a><?php
                 }
             ?>
 			<?php
@@ -86,17 +86,17 @@
 
 <footer class="w3-container w3-gray w3-center">
 	<div class="w3-row">
-        <div class="col-4 w3-panel w3-leftbar w3-black">
+        <div class="col-4 w3-panel w3-leftbar w3-blue">
             <div class="col-12">
             <p class="w3-xlarge w3-serif w3-animate-fading"> <i>Reunirse es el comienzo; mantenerse es el progreso; trabajar es el éxito. </i></p>
             </div>
         </div>
-        <div class="col-4 w3-panel w3-leftbar w3-black">
+        <div class="col-4 w3-panel w3-leftbar w3-blue">
             <div class="col-12">
                 <p class="w3-xlarge w3-serif w3-animate-fading"> <i>La mejor suerte de todas es la suerte de hacer algo por decision propia. </i></p>
             </div>
         </div>
-        <div class="col-4 w3-panel w3-leftbar w3-black">
+        <div class="col-4 w3-panel w3-leftbar w3-blue">
             <div class="col-12">
             <p class="w3-xlarge w3-serif w3-animate-fading"> <i>Cinco minutos bastan para soñar toda una vida, así de relativo es el tiempo. </i></p>
             </div>

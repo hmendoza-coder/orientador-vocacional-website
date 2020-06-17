@@ -31,7 +31,7 @@ function alertaSalida(){
         confirmButtonText: 'Salir'
       }).then((result) => {
         if (result.value) {
-            location.href ="http://localhost/orientador-vocacional-website/login.html"; // cambiar la redireccion si se mueve la ruta
+            location.href ="http://localhost/orientador-vocacional-website/index.php"; // cambiar la redireccion si se mueve la ruta
             return true;
         }
       })
