@@ -22,6 +22,9 @@ body{
     margin-right: auto;
     padding: 0px 0px;  
     background: #ebeaea57;
+
+    align-self: center;
+	justify-self: center;
 }
 /*YA QUEDO*/
 h1{
@@ -34,6 +37,7 @@ h1{
     margin-left: auto;
     margin-right: auto;
     color: rgb(24, 23, 23);
+
 }
 h3{
     font-family: 'Poppins', sans-serif;
@@ -76,16 +80,18 @@ h3{
  /*   display: grid;
     grid-template-columns: 85% 5%;
     font-family: 'Poppins', sans-serif;*/
-    display: grid;
-    grid-template-columns: 1fr;
+    /*display: grid;
+    grid-template-columns: 1fr;*/
 	position: relative;
-
-	width: 700px;
-	padding: 50px 70px;
-	left: 0px;
-	right: 100px;
+    left: 0;
+	width: 900px;
+	padding: 50px 0px;
+    
+    
     background: #ebeaea34;
-	text-align: center;
+    text-align: center;
+    
+    top:200px;
 	
 	align-self: center;
 	justify-self: center;

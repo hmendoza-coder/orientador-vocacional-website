@@ -3,11 +3,12 @@ function validarSesion(){
     var txtPass = document.getElementById('pass').value;
 
     if(txtCorreo == null || txtCorreo.length == 0 || /^\s+$/.test(txtCorreo)){
-        Swal.fire(
+         Swal.fire(
             'Correo es campo obligatorio.',
             'Este campo es obligatorio NO debe ir vacio o solo con espacios,',
             'question'
-        )
+        ) 
+        //alert("Correo es campo obligatorio.");
         return false;
     }
     else{

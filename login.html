@@ -20,26 +20,31 @@
         <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
     </head>
 <body>
-    
-    <form action="PHP/validar.php" class="form-box" method="POST">
-        
-        <!--hola que hacen?-->
-        <a href="index.php"><img class="avatar" src="imagenes/birrete.png" alt="logo del orientador"></a>
-        <h1 class="form-title">Sign In</h1>
-        <input type ="text" placeholder="Correo electrónico" id="correo" name = "correo" autocomplete="off" required>
-        <input type="password" placeholder="Contraseña" id="pass" name = "pass" autocomplete="off" required>
-            <button type="submit" onclick="return validarSesion();">
-                  
-                Iniciar sesión
-                
-            </button>
-        <!--AQUI ESTA EL ENLACE PARA LA PAGINA DE REGISTRO-->
-        <footer>
-            <!--<a href="#">¿Olvidaste tu contraseña?</a>-->
-            <u><a href="registro.php">¿Eres nuevo? Registrate aqui</a></u>
-        </footer>
-    </form>
+    <div class="contenedor">
+    <a href="index.php">
+        <img class="avatar" src="imagenes/birrete.png" alt="logo del orientador" style="width: 100px; ">
+    </a>
+        <form action="PHP/validar.php" class="form-box" method="POST">
+            
+            <!--hola que hacen?-->
+            <div>
+                <h1 class="form-title">Sign In</h1>
+                <input type ="text" placeholder="Correo electrónico" id="correo" name = "correo" autocomplete="off" required>
+                <input type="password" placeholder="Contraseña" id="pass" name = "pass" autocomplete="off" required>
+                    <button type="submit" onclick="return validarSesion();">
+                        
+                        Iniciar sesión
+                        
+                    </button>
+                <!--AQUI ESTA EL ENLACE PARA LA PAGINA DE REGISTRO-->
+                <footer>
+                    <!--<a href="#">¿Olvidaste tu contraseña?</a>-->
+                    <u><a href="registro.php">¿Eres nuevo? Registrate aqui</a></u>
+                </footer>
+            </div>
+        </form>
+    </div>
 
-<script src="Javascript/validar.js"></script>
+    <script src="Javascript/validar.js"></script>
 </body>
 </html>

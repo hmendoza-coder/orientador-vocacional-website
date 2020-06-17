@@ -8,6 +8,8 @@
         <!-- Declaracion del head -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Favicon-->
+        <link rel="icon" type="image/png" href="imagenes/icon.PNG" />
         <link rel="stylesheet" href="Estilos/3wschools.css" type="text/css">
         <link rel="stylesheet" href="Estilos/estilo.css" type="text/css"> 
         <link rel="stylesheet" href="Estilos/slider.css">

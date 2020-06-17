@@ -6,6 +6,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!--Favicon-->
+    <link rel="icon" type="image/png" href="imagenes/icon.PNG" />
     <title>Orientador vocacional</title>
     <link rel="stylesheet" href="estiloResultado.css">
     <link rel="stylesheet" href="Estilos/3wschools.css" type="text/css">

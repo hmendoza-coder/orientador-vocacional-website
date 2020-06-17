@@ -11,6 +11,8 @@
         <!--<meta name= "viewport" content="width=device-width, initial-scale-1.0">       esta cosa da error en consola-->
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="estilosTest.css">
+        <!--Favicon-->
+        <link rel="icon" type="image/png" href="imagenes/icon.PNG" />
         <!--Scripts-->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 	    <!--Fuentes-->
@@ -32,12 +34,12 @@
         </div>  
         <h1>Orientador Vocacional</h1>              
         <h2>Test vocacional </h2>
-        <label>¡Bienvenido <b><?php echo $_SESSION['nombres']; ?></b> a nuestro orientador vocacional!</label>
+        <label>Bienvenido(a)<b><?php echo $_SESSION['nombres']; ?></b> a nuestro orientador vocacional</label>
 
         <div class ="box-test">
 
-                <p class = "instruccion">
-                    Se sincero al responder pues de esto depende que el resultado sea el mas acertado.
+                 <p class = "instruccion">
+                    Responde que tanto te gusta cada unas de las actividades planteadas:
                 </p>
                 <form action="PHP/validarTest.php" method="POST" class="form-test">
                     <!--Prueba para vista de preguntas-->

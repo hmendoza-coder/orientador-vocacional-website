@@ -11,7 +11,7 @@ include "../Cliente.php";?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <!--Estilos-->
         <link rel="stylesheet" href="../estiloRegistro.css"> 
-        <link rel="stylesheet" href="../Estilos/estilo.css" type="text/css"> <!-- Salio una pinche linea blanca si no les gusta quitar esta linea --> 
+        <!-- <link rel="stylesheet" href="../Estilos/estilo.css" type="text/css">  Salio una pinche linea blanca si no les gusta quitar esta linea --> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 	    <!--Titulos-->
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
@@ -121,9 +121,10 @@ include "../Cliente.php";?>
         </button>
         </div>
 
-        <h1>Orientador Vocacional</h1>
+       
             <!---Esta clase content-form es para acomodar los grid en el css-->
             <div class="content-form">
+                 <h1>Orientador Vocacional</h1>
                 <div class="contact-form">
                     <h3>Registrate</h3>
                         <form action="PHP/validarRegistro.php" method="POST" id="formulario">
