@@ -29,25 +29,25 @@
 
 	<!--Barra de menu responsiva-->
 	<div class="topnav" id="myTopnav">
-            <a href="index.php" class="active" >Inicio</a>
+            <a class="active" href="index.php" ><i class="fa fa-fw fa-home"></i>Inicio</a>
             <?php
 				if(isset($_SESSION['idSesion'])){?>
-                <a href="archivo_respuesta.php" onclick="return validarConexion();">Mostrar resultados</a><?php
+                <a href="archivo_respuesta.php" onclick="return validarConexion();"><i class="fa fa-fw fa-search"></i>Mostrar resultados</a><?php
                 }
             ?>
 			<?php
 				if(isset($_SESSION['idSesion'])){
                     ?>
-					<a href="test.php">Comenzar Test</a>
+					<a href="test.php"><i class="fa fa-fw fa-bars"></i>Comenzar Test</a>
 					<?php
 				}
 			?><?php
             if(!isset($_SESSION['idSesion'])){?>
-                <a href="login.html" class="popup-link" >Iniciar Sesión</a>
-                <a href="registro.php" class="popup-link" >Resgistrarse</a><?php
+                <a href="login.html" class="popup-link" ><i class="fa fa-fw fa-user"></i>Iniciar Sesión</a>
+                <a href="registro.php" class="popup-link" ><i class="fa fa-fw fa-refresh"></i>Resgistrarse</a><?php
             }
             else{?>
-                <a href="PHP/cerrarSesion.php" class="popup-link" onclick =" return alertaSalida();">Cerrar Sesión</a><?php
+                <a href="PHP/cerrarSesion.php" class="popup-link" onclick =" return alertaSalida();"><i class="fa fa-fw fa-close"></i>Cerrar Sesión</a><?php
             }
             ?>
             
