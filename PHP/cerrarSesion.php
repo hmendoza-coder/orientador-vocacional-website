@@ -7,10 +7,8 @@ $_SESSION = array();
 
 // Cerrar la sesion tambien en la API.
 $url = "http://localhost:52899/Sesion/logout";
-$response = callAPI("PATCH",$url,$_SESSION['idSesion']);
-if($response){
-    echo "Entro correctamente, revisa tu cosa en base";
-}
+// aqui deberia ir el metodo que cierra la api, si lo ubiera terminado...
+
 
 // Esto destruirá la sesión, y no la información de la sesión
 if (ini_get("session.use_cookies")) {
@@ -22,5 +20,5 @@ if (ini_get("session.use_cookies")) {
 }
 // Finalmente, destruir la sesión.
 session_destroy();
-//header('Location:../login.html');
+header('Location:../index.php');
 ?>
