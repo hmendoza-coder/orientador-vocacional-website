@@ -34,7 +34,7 @@
         </div>  
         <h1>Orientador Vocacional</h1>              
         <h2>Test vocacional </h2>
-        <label>Bienvenido(a)<b><?php echo $_SESSION['nombres']; ?></b> a nuestro orientador vocacional</label>
+        <label>Bienvenido(a) <b><?php echo $_SESSION['nombres']; ?></b> a nuestro orientador vocacional</label>
 
         <div class ="box-test">
 

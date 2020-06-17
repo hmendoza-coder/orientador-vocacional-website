@@ -28,7 +28,7 @@
             ?>
             <script>
                 Swal.fire(
-                    'Finaliza el cuestionario.',
+                    'Cuestionario finalizado.',
                     'A contnuacion serás reedirigido a los resultados.',
                     'success'
                 ).then(function() {

@@ -40,12 +40,12 @@
                 foreach($response as $value){?>
                     <div class="w3-col s4 w3-center">
                     <b><label id="carrera<?php echo $cont?>"> <?php if(isset($value['carrera'])) echo $value['carrera']; ?></label></b>
-                    <input type="hidden" id="valor<?php echo $cont?>" value="<?php if(isset($value['afinidad'])) echo $value['afinidad']; ?>"></input>
+                    <input type="hidden" id="valor<?php echo $cont?>" value="<?php if(isset($value['afinidad'])){ echo $value['afinidad'];}else{ echo "no hay nada";} ?>"></input>
                     </div><?php   
                     $cont++;    
-                }
-           ?>
-        </div>
+                }?>
+                <input type="hidden" id="contador" value="<?php echo $cont; ?>"><?php echo $cont; ?>"</input>
+           </div>
         <div class="w3-row">
             <canvas id="myChart"></canvas>
         </div>
