@@ -15,7 +15,8 @@
         <!--Scripts-->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <!--Estilos-->
-        <link rel="stylesheet" href="estiloRegistro.css">
+        <link rel="stylesheet" href="estiloRegistro.css"> 
+        <link rel="stylesheet" href="Estilos/estilo.css" type="text/css"> <!-- Salio una pinche linea blanca si no les gusta quitar esta linea --> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 	    <!--Titulos-->
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
@@ -29,7 +30,7 @@
         <div class="afuera">
          <!--AQUI ESTA EL BOTON DE CIERRE DE SESION QUE DEBE AVISAR A LA API QUE SE HA CERRADO SESION-->
         <button type="submit" class="cierre">
-            <a href="login.html">
+            <a href="index.php">
             Volver al inicio
             </a>
         </button>
@@ -92,7 +93,7 @@
                             iniciar("Estado"); ?>
                             </select>
                         </p>
-                        <p>
+                        <!-- <p>
                             <label>Municipio</label>
                             <select name="municipio" id="selectMunicipio"  type="combo">
                             <option value="" selected disabled hidden>Municipio </option>
@@ -103,13 +104,19 @@
                             <select name="colonia" id="selectColonia"  type="combo" >
                             <option value="" selected disabled hidden>Colonia </option>
                             </select>
-                            <!-- -->
-                        </p>
-                        <p class="bloque" onclick = "return validarFormulario();">
-                            <button type="submit">
-                                Aceptar
-                            </button>
-                        </p>
+                        </p> -->
+                        <div class="w3-row">
+                            <div class="col-7"></div>
+                            <div class="col-3 w3-center">
+                                <p class="bloque" onclick = "return validarFormulario();">
+                                    <button type="submit">
+                                        Aceptar
+                                    </button>
+                                </p> 
+                            </div>
+                            <div class="col-2"></div>  
+                        </div>
+                        
                     </form>
                 </div>
                 
